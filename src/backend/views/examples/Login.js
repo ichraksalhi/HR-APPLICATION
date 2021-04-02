@@ -1,21 +1,4 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-import React from "react";
+import React, { useState } from 'react';
 
 // reactstrap components
 import {
@@ -34,6 +17,17 @@ import {
 } from "reactstrap";
 
 const Login = () => {
+      const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+        });
+    const {email,password} = formData;
+    //const onChange = e =>setFormData({...formData, name: e.target.value}); //we want to change the name
+    const onChange = e =>setFormData({...formData, [e.target.name]: e.target.value}); //using onChange for every field
+    const onSubmit = async e =>{
+        e.preventDefault();
+            console.log("SUCCESS!");
+    }
   return (
     <>
       <Col lg="5" md="7">
@@ -83,7 +77,7 @@ const Login = () => {
             <div className="text-center text-muted mb-4">
               <small>Or sign in with credentials</small>
             </div>
-            <Form role="form">
+            <Form role="form" className="form" onSubmit={e => onSubmit(e)}>
               <FormGroup className="mb-3">
                 <InputGroup className="input-group-alternative">
                   <InputGroupAddon addonType="prepend">
@@ -92,9 +86,7 @@ const Login = () => {
                     </InputGroupText>
                   </InputGroupAddon>
                   <Input
-                    placeholder="Email"
-                    type="email"
-                    autoComplete="new-email"
+                    type="email" placeholder="Email" name="email" value={email} onChange={e=> onChange(e)} required autoComplete="new-email"
                   />
                 </InputGroup>
               </FormGroup>
@@ -106,8 +98,12 @@ const Login = () => {
                     </InputGroupText>
                   </InputGroupAddon>
                   <Input
-                    placeholder="Password"
                     type="password"
+                    placeholder="Password"
+                    name="password"
+                    minLength="6"
+                    value={password} onChange={e=> onChange(e)}
+                    required
                     autoComplete="new-password"
                   />
                 </InputGroup>
@@ -122,11 +118,10 @@ const Login = () => {
                   className="custom-control-label"
                   htmlFor=" customCheckLogin"
                 >
-                  <span className="text-muted">Remember me</span>
                 </label>
               </div>
               <div className="text-center">
-                <Button className="my-4" color="primary" type="button">
+                <Button className="my-4" color="primary" type="submit">
                   Sign in
                 </Button>
               </div>

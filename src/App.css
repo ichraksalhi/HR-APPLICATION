@@ -1,0 +1,17 @@
+@import './frontOffice/assets/css/style.css';
+@import './frontOffice/assets/css/open-iconic-bootstrap.min.css';
+@import './frontOffice/assets/css/animate.css';
+@import './frontOffice/assets/css/owl.theme.default.min.css';
+@import './frontOffice/assets/css/magnific-popup.css';
+@import './frontOffice/assets/css/aos.css';
+@import './frontOffice/assets/css/ionicons.min.css';
+@import './frontOffice/assets/css/bootstrap-datepicker.css';
+@import './frontOffice/assets/css/jquery.timepicker.css';
+@import './frontOffice/assets/css/flaticon.css';
+@import './frontOffice/assets/css/icomoon.css';
+@import './frontOffice/assets/css/owl.carousel.min.css';
+
+.ftco-animate {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

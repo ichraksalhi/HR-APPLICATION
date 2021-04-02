@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Argon Dashboard React - v1.2.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-react
-* Copyright 2021 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import Index from "backend/views/Index.js";
 import Profile from "backend/views/examples/Profile.js";
 import Maps from "backend/views/examples/Maps.js";
@@ -22,7 +5,10 @@ import Register from "backend/views/examples/Register.js";
 import Login from "backend/views/examples/Login.js";
 import Tables from "backend/views/examples/Tables.js";
 import Icons from "backend/views/examples/Icons.js";
-
+import UsersList from "backend/views/examples/UsersList.js";
+import ListJobs from "backend/views/ListJobs";
+import JobDetails from "backend/views/examples/JobDetails";
+import scraping from "backend/views/examples/scrapping";
 var routes = [
   {
     path: "/index",
@@ -31,7 +17,7 @@ var routes = [
     component: Index,
     layout: "/admin",
   },
-  {
+  /*{
     path: "/icons",
     name: "Icons",
     icon: "ni ni-planet text-blue",
@@ -72,6 +58,35 @@ var routes = [
     icon: "ni ni-circle-08 text-pink",
     component: Register,
     layout: "/auth",
+  },*/
+  {
+    path: "/UsersList",
+    name: "UsersList",
+    icon: "ni ni-circle-08 text-pink",
+    component: UsersList,
+    layout: "/admin",
   },
+  {
+    path: "/ListJobs",
+    name: "ListJobs",
+    icon: "ni ni-circle-08 text-pink",
+    component: ListJobs,
+    layout: "/admin",
+  },
+  {
+    path: "/JobDetails",
+    name: "JobDetails",
+    icon: "ni ni-circle-08 text-pink",
+    component: JobDetails,
+    layout: "/admin",
+  },
+  {
+    path: "/scrapping",
+    name: "scrapping",
+    icon: "ni ni-planet text-blue",
+    component: scraping,
+    layout: "/admin",
+  },
+
 ];
 export default routes;
