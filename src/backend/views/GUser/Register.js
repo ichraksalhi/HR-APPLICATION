@@ -15,7 +15,6 @@ import {
   Row,
   Col,
 } from "reactstrap";
-
 const Register = () => {
   return (
     <>

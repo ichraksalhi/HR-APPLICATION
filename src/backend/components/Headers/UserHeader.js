@@ -9,11 +9,11 @@ const UserHeader = () => {
       <div
         className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
         style={{
-          minHeight: "600px",
+          minHeight: "400px",
           backgroundImage:
-            "url(" +
-            require("../../assets/img/theme/pic.png").default +
-            ")",
+          "url(" +
+          require("../../assets/img/theme/pic.png").default +
+          ")",
           backgroundSize: "cover",
           backgroundPosition: "center top",
         }}
@@ -23,24 +23,12 @@ const UserHeader = () => {
         {/* Header container */}
         <Container className="d-flex align-items-center" fluid>
           <Row>
-            <Col lg="7" md="10">
-              <h1 className="display-2 text-white"> Job   </h1>
-              <p className="text-white mt-0 mb-5">
-                This is your job page. You can see the details of each specific job 
-              
-              </p>
-              <Button
-                color="info"
-                href="#pablo"
-                onClick={(e) => e.preventDefault()}
-              >
-                Edit Job
-              </Button>
-            </Col>
+          
+   
           </Row>
         </Container>
       </div>
-    </>
+       </>
   );
 };
 

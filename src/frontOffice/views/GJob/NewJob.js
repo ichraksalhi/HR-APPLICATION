@@ -1,5 +1,6 @@
 import React from 'react';
-import Header from '../Layouts/Header';
+import Header from '../../Layouts/Header';
+
 
 const NewJob = (props) => {
     return (

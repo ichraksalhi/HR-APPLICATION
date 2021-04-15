@@ -1,21 +1,9 @@
 const mongoose= require('mongoose');
 const PostJobSchema = new mongoose.Schema({
-    user:{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users'
-    },
     title:{
         type:String,
         required:true,
-        unique:true,
         trim: true,
-    },
-    
-    companyName:{
-        type:String,
-        required:true,
-        trim: true,
-       
     },
     location:{
         type:String,
@@ -27,16 +15,9 @@ const PostJobSchema = new mongoose.Schema({
         required:true,
         trim: true,
     },
-    availablePositionNumber: {
-        type:Number,
-        required: true,
-
-        
-    },
     salary: {
         type:Number,
         required: true,
-        
     },
     studyLevel:{
         type:String,
@@ -48,34 +29,80 @@ const PostJobSchema = new mongoose.Schema({
         required: true,
         trim: true,
     },
-    type:{
+    contractType:{
         type: String,
         required: true,
         trim: true,
     },
-    languages: [
-        {
-            name:{
-                type: String,
-                required: true,
-            }     
-        }
-    ],
+    nbrApplied:{
+        type: Number,
+        default: 0
+    },
     likes: [
         {
             user:{
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'users'
-            },
-            number: {
-                type: Number,
-                default: 0,
+            }   
+        }
+    ],
+    requirements: [
+        {
+            text: {
+                type: String,
+                trim: true
             }     
+        }
+    ],
+    skills: [
+        {
+            title: {
+                type: String,
+                trim: true
+            }     
+        }
+    ],
+    comments: [
+        {
+            user:{
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'users'
+            },
+            text: {
+                type: String,
+                required: true
+            },
+            name: {
+                type: String
+            },
+            avatar: {
+                type: String
+            },
+            date: {
+                type: Date,
+                default: Date.now
+            }
         }
     ],
     createdAt:{
         type : Date,
         default : Date.now
+    },
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    },
+    company:{
+        type: String
+    },
+    approved:{
+        type: Number,
+        default: 0,
+    },
+    activate:{
+        type: Number,
+        default: 1,
     }
     });
-module.exports = PostJob = mongoose.model('PostJob', PostJobSchema);
+
+module.exports = Job = mongoose.model('Job', PostJobSchema);

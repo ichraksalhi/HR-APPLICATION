@@ -1,14 +1,17 @@
 import Index from "backend/views/Index.js";
-import Profile from "backend/views/examples/Profile.js";
 import Maps from "backend/views/examples/Maps.js";
-import Register from "backend/views/examples/Register.js";
-import Login from "backend/views/examples/Login.js";
 import Tables from "backend/views/examples/Tables.js";
 import Icons from "backend/views/examples/Icons.js";
 import UsersList from "backend/views/examples/UsersList.js";
-import ListJobs from "backend/views/ListJobs";
-import JobDetails from "backend/views/examples/JobDetails";
+import ListJobs from "backend/views/GJob/ListJobs";
+import activatedJobs from "backend/views/GJob/activatedJobs";
+import unactivatedJobs from "backend/views/GJob/unactivatedJobs";
+import JobDetails from "backend/views/GJob/JobDetails";
+import Ranking from "backend/views/GJob/ranking";
 import scraping from "backend/views/examples/scrapping";
+import JobDetailsDesap from"backend/views/GJob/JobDetailsDesap";
+import PostJob from "backend/views/GJob/PostJob";
+import ListJobsDesap from "backend/views/GJob/ListJobsDesap";
 var routes = [
   {
     path: "/index",
@@ -62,22 +65,57 @@ var routes = [
   {
     path: "/UsersList",
     name: "UsersList",
-    icon: "ni ni-circle-08 text-pink",
+    icon: "ni ni-circle-08 text-purple",
     component: UsersList,
     layout: "/admin",
   },
   {
     path: "/ListJobs",
-    name: "ListJobs",
+    name: "Jobs",
     icon: "ni ni-circle-08 text-pink",
     component: ListJobs,
     layout: "/admin",
   },
   {
+    path: "/activatedJobs",
+    name: "activatedJobs",
+    component: activatedJobs,
+    layout: "/admin",
+  },
+  {
+    path: "/unactivatedJobs",
+    name: "unactivatedJobs",
+    component: unactivatedJobs,
+    layout: "/admin",
+  },
+  {
     path: "/JobDetails",
-    name: "JobDetails",
-    icon: "ni ni-circle-08 text-pink",
+    name: "Job Details",
     component: JobDetails,
+    layout: "/admin",
+  },
+  {
+    path: "/JobDetailsDesap",
+    name: "Job Details Desappprove",
+    component: JobDetailsDesap,
+    layout: "/admin",
+  },
+  {
+    path: "/ListJobsDesap",
+    name: "ListJobsDesap",
+    component: ListJobsDesap,
+    layout: "/admin",
+  },
+  {
+    path: "/Ranking",
+    name: "Ranking",
+    component: Ranking,
+    layout: "/admin",
+  },
+  {
+    path: "/PostJob",
+    name: "PostJob",
+    component: PostJob,
     layout: "/admin",
   },
   {

@@ -13,11 +13,10 @@ const Footer = () => {
             © {new Date().getFullYear()}{" "}
             <a
               className="font-weight-bold ml-1"
-              href="https://www.creative-tim.com?ref=adr-admin-footer"
               rel="noopener noreferrer"
               target="_blank"
             >
-              Creative Tim
+              SheDev.IT
             </a>
           </div>
         </Col>
@@ -30,7 +29,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                Creative Tim
+                SheDev.IT
               </NavLink>
             </NavItem>
 
@@ -42,28 +41,7 @@ const Footer = () => {
               >
                 About Us
               </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink
-                href="http://blog.creative-tim.com?ref=adr-admin-footer"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                Blog
-              </NavLink>
-            </NavItem>
-
-            <NavItem>
-              <NavLink
-                href="https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md?ref=adr-admin-footer"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                MIT License
-              </NavLink>
-            </NavItem>
-          </Nav>
+            </NavItem></Nav>
         </Col>
       </Row>
     </footer>

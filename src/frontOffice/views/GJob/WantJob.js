@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../Layouts/Header';
+import Header from '../../Layouts/Header';
 import { Link } from "react-router-dom";
 
 const WantJob = (props) => {

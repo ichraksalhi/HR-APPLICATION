@@ -10,7 +10,7 @@ export class Header extends Component {
         <div className="row no-gutters slider-text align-items-end justify-content-start">
           <div className="col-md-12 ftco-animate text-center mb-5">
           	<p className="breadcrumbs mb-0"><span className="mr-3"><Link to="index.html">Home <i className="ion-ios-arrow-forward"></i></Link></span> <span className="mr-3"><Link to="blog.html">Blog <i className="ion-ios-arrow-forward"></i></Link></span> <span>Blog Single</span></p>
-            <h1 className="mb-3 bread">Header name</h1>
+            <h1 className="mb-3 bread">HR APPLY ROOM</h1>
           </div>
         </div>
       </div>

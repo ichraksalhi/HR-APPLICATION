@@ -10,6 +10,9 @@
 @import './frontOffice/assets/css/flaticon.css';
 @import './frontOffice/assets/css/icomoon.css';
 @import './frontOffice/assets/css/owl.carousel.min.css';
+@import './frontOffice/assets/css/css/login.css';
+@import './frontOffice/assets/fonts/ionicons/css/material-design-iconic-font.css';
+
 
 .ftco-animate {
   opacity: 1 !important;
