@@ -17,6 +17,16 @@ app.use('/api/auth', require('./routes/GUser/auth'));
 app.use('/api/register', require('./routes/GUser/register'));
 app.use('/api/Job', require('./routes/GJob/Job'));
 
+//GReclamation 
+
+const reclamationRouter = require('./routes/GReclamation/reclamation');
+const userRouter = require('./routes/GUser/user');
+
+app.use('/reclamation', reclamationRouter);
+app.use( '/user' ,userRouter);
+
+
+
 const connection = mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB database connection established successfully");

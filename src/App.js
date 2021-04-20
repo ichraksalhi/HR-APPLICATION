@@ -24,6 +24,10 @@ import store from './store';
 import {loadUser} from './actions/auth'; 
 import setAuthToken from './utils/setAuthToken';
 
+import NewReclamation from 'frontOffice/views/GReclamation/NewReclamation';
+//import Reclamations from 'frontOffice/views/Reclamations';
+import Reclamations from 'frontOffice/views/GReclamation/Reclamations';
+
 
 if(localStorage.token){
     setAuthToken(localStorage.token);
@@ -53,6 +57,8 @@ const App = () => {
                             <Route  exact  path="/Register" component={Register}></Route>
                             <Route  exact  path="/admin" component={Admin}></Route>
                             <Route  exact  path="/DetailJob/:id" component={DetailJob}></Route>
+                            <Route  exact path="/Reclamation" component={NewReclamation}></Route>
+                            <Route  exact path="/Reclamations" component={Reclamations}></Route>
                         </Switch>
                         </div>  
                          

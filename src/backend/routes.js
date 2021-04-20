@@ -12,6 +12,13 @@ import scraping from "backend/views/examples/scrapping";
 import JobDetailsDesap from"backend/views/GJob/JobDetailsDesap";
 import PostJob from "backend/views/GJob/PostJob";
 import ListJobsDesap from "backend/views/GJob/ListJobsDesap";
+
+//chouchou
+
+import ListReclamations from "backend/views/GReclamation/ListReclamations.js"; 
+import ReclamationDetails from "backend/views/GReclamation/ReclamationDetails.js";
+import StatReclamation from "backend/views/GReclamation/StatReclamation.js";
+
 var routes = [
   {
     path: "/index",
@@ -125,6 +132,28 @@ var routes = [
     component: scraping,
     layout: "/admin",
   },
+  {
+    path: "/ListReclamations",
+    name: "ListReclamations",
+    icon: "ni ni-planet text-blue",
+    component: ListReclamations,
+    layout: "/admin",
+  },
+  {
+    path: "/StatReclamation",
+    name: "StatReclamation",
+    icon: "ni ni-planet text-blue",
+    component: StatReclamation,
+    layout: "/admin",
+  },
+  {
+    path: "/ReclamationDetails",
+   
+    component: ReclamationDetails, 
+    layout: "/admin",
+  },
+ 
+
 
 ];
 export default routes;

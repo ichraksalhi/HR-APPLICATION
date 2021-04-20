@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect,useHistory } from "react-router-dom";
 import bg from '../../assets/images/bg_1.jpg';
 import NavbarLogReg from '../../Layouts/NavbarLogReg';
 //REDUX
@@ -10,7 +10,13 @@ import { login } from '../../../actions/auth';
 import { logout } from '../../../actions/auth';
 import { createNonNullExpression, createNull } from 'typescript';
 
+/*import FacebookLogin from '../../Layouts/social/FacebookLogin/'
+import GoogleLogin from '../../Layouts/social/GoogleLogin/'
+import LinkedinLogin from '../../Layouts/social/LinkedinLogin/'*/
+
+
 const Login = ({ login, isAuth }) => {
+  const history = useHistory();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -20,12 +26,11 @@ const Login = ({ login, isAuth }) => {
   const onSubmit = async e =>{
       e.preventDefault(); 
       login({email,password});  
-        //Redirect if logged in
-        if(isAuth){
-          return <Redirect to='/'/>
-        }
+  }        
+  //Redirect if logged in
+  if(isAuth){
+    history.push('/');
   }
-
       return (
         <>        
         <div className="limiter">
@@ -67,6 +72,7 @@ const Login = ({ login, isAuth }) => {
                 <ul className="ftco-social list-unstyled float-md-center">
                 <li className="ftco-animate"><Link to="#"><span className="icon-google"></span></Link></li>
                 </ul>
+               
                 </center>
 
               </div>

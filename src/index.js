@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import $ from 'jquery';
@@ -11,10 +11,10 @@ ReactDOM.render(
     <App />
   </React.StrictMode>,
   document.getElementById('root')
-);
+); 
+*/
 
 
-/*
  import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -40,4 +40,4 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
    </BrowserRouter>
    </Provider>,                   
    document.getElementById("root")
- );*/
+ ); 
