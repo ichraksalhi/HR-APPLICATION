@@ -38,9 +38,9 @@ $secondary: #fdab44;
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#207dff', endColorstr='#a16ae8', GradientType=1 );
 }
 
-html {
-	// overflow-x: hidden;
-}
+// html {
+// 	// overflow-x: hidden;
+// }
 body {
 	font-family: $font-primary;
 	background: $white;
@@ -943,8 +943,8 @@ h1, h2, h3, h4, h5,
 	position: relative;
 	width: 100%;
 	display: block;
-	.nav-link-wrap{
-	}
+	// .nav-link-wrap{
+	// }
 	.nav-pills{
 		display: inline-block;
 		p{
@@ -1202,16 +1202,16 @@ textarea.form-control {
 
 
 .about-author{
-	img{
-	}
+	// img{
+	// }
 	.desc{
 		h3{
 			font-size: 24px;
 		}
 	}
-	.bio{
+	// .bio{
 
-	}
+	// }
 }
 
 
@@ -1571,7 +1571,7 @@ textarea.form-control {
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
-  -webkit-backface-visibility: hidden;
+//   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.3s ease-out; 
   -moz-transition: all 0.3s ease-out; 
   -o-transition: all 0.3s ease-out; 
@@ -1621,8 +1621,8 @@ textarea.form-control {
 		}
 	}
 	.text{
-		.desc{
-		}
+		// .desc{
+		// }
 		strong.number{
 			font-weight: 600;
 			font-size: 34px;
@@ -1745,16 +1745,16 @@ textarea.form-control {
 }
 
 .block-6 {
-	.icon {
-		span {
-			&:before {
-			}
-		}
-	}
+	// .icon {
+	// 	span {
+	// 		&:before {
+	// 		}
+	// 	}
+	// }
 	.media-body {
-		.heading {
+		// .heading {
 
-		}
+		// }
 		p {
 			font-size: 16px;
 		}
@@ -1763,8 +1763,8 @@ textarea.form-control {
 
 //### .block-18 
 .block-18 {
-	.icon, .text {
-	}
+	// .icon, .text {
+	// }
 	.icon {
 		> span {
 			font-size: 60px;
@@ -1819,7 +1819,7 @@ textarea.form-control {
 			a{
 				color: lighten($black,10%);
 			}
-			span{}
+			// span{}
 		}
 	}
 	.contact-form{
@@ -1833,8 +1833,8 @@ textarea.form-control {
 		box-shadow: none!important;
 		font-size: 15px;
 	}
-	#map {
-	}
+	// #map {
+	// }
 }
 
 
@@ -2078,13 +2078,13 @@ textarea.form-control {
 				right: 10px;
 			}
 		}
-		.textfield-search, .select-wrap {
-		}
-		.textfield-search {
-			input {
+		// .textfield-search, .select-wrap {
+		// }
+		// .textfield-search {
+		// 	input {
 
-			}
-		}
+		// 	}
+		// }
 		.select-wrap {
 			position: relative;
 			select {

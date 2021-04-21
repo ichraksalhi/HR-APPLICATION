@@ -2,6 +2,28 @@ import './App.css';
 import React, { Fragment, useEffect } from 'react';
 import {BrowserRouter, Route,Switch} from'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
+//import './backend/assets/css/argon-dashboard-react.css';
+//import PostJob from 'frontOffice/views/PostJob';
+//import Sidebar from 'frontOffice/Layouts/Sidebar'; <Sidebar/>
+//import homeQuiz from 'frontOffice/views/homeQuiz';
+
+
+// Quiz
+import QuizInstructions from './frontOffice/views/GQuiz/QuizInstructions';
+import play from './frontOffice/views/GQuiz/play';
+//import profile from './frontOffice/views/Profile'
+import QuizSummary from 'frontOffice/views/GQuiz/QuizSummary';
+// Quiz
+
+// Personality Test
+import PersonalityTest from 'frontOffice/views/GPersonalityTest/PersonalityTest';
+import TestInstructions from 'frontOffice/views/GPersonalityTest/TestInstructions';
+import TestResult from 'frontOffice/views/GPersonalityTest/TestResult';
+// Personality Test
+
 import Layout  from './frontOffice/Layouts/Layout';
 import Home  from './frontOffice/views/Home';
 import BrowseJobs  from './frontOffice/views/GJob/BrowseJobs';
@@ -59,6 +81,14 @@ const App = () => {
                             <Route  exact  path="/DetailJob/:id" component={DetailJob}></Route>
                             <Route  exact path="/Reclamation" component={NewReclamation}></Route>
                             <Route  exact path="/Reclamations" component={Reclamations}></Route>
+                            {/* Quiz */}
+                            <Route  exact  path="/quizSummary" component={QuizSummary}></Route>
+                            <Route  exact  path="/play/instructions" component={QuizInstructions}></Route>
+                            <Route  exact  path="/play/quiz" component={play}></Route>
+                            {/* Personality Test */}
+                            <Route  exact  path="/personalityTest/instructions" component={TestInstructions}></Route>
+                            <Route  exact  path="/personalityTest/takeTest" component={PersonalityTest}></Route>
+                            <Route  exact  path="/personalityTest/testResult" component={TestResult}></Route>
                         </Switch>
                         </div>  
                          

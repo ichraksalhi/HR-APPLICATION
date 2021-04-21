@@ -1,0 +1,156 @@
+.logoTest {
+  animation: logoTest-spin infinite 20s linear;
+  height: 80px;
+}
+
+@keyframes logoTest-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//Personality test
+.questionsTest {
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  border-radius: 30px;
+  //border-left: 5px solid black;
+  width: 80%;
+  margin: 10rem auto 0 auto;
+  padding: 1rem 3rem;
+  h2 {
+    text-align: center;
+    font-weight: lighter;
+    font-family: $quicksand;
+  }
+  .lifeline-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .lifeline {
+    position: relative;
+    top: -3px;
+  }
+  h5 {
+    font-size: 1.2rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    line-height: 1.5rem;
+    text-align: center;
+    color: black;
+  }
+  .options-container {
+    display: inline-block;
+    width: 50%;
+  }
+  .options {
+    background-color: #1da1f2;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    margin: 2rem auto;
+    padding: 1rem;
+    transition: 0.3% linear all;
+    text-align: center;
+    width: 90%;
+  }
+  .options:hover {
+    background-color: darken(#1da1f2, 20%);
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+    padding: 2rem;
+    width: 80%;
+  }
+
+  .button-container button {
+    background-image: linear-gradient(
+      to right,
+      #c2e59c 0%,
+      #64b3f4 51%,
+      #c2e59c 100%
+    );
+  }
+  .button-container button {
+    margin-top: 15px;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 5px;
+    display: block;
+
+    font-family: $quicksand;
+    margin-right: $md;
+    padding: $xs $sm;
+  }
+
+  .button-container button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+}
+
+.optionsRed {
+  background-color: #d62516;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  margin: 2rem auto;
+  padding: 1rem;
+  transition: 0.3% linear all;
+  text-align: center;
+  width: 90%;
+}
+.optionsRed:hover {
+  background-color: darken(#d62516, 20%);
+}
+.optionsGreen {
+  background-color: #11ca68;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  margin: 2rem auto;
+  padding: 1rem;
+  transition: 0.3% linear all;
+  text-align: center;
+  width: 90%;
+}
+.optionsGreen:hover {
+  background-color: darken(#11ca68, 20%);
+}
+.optionsYellow {
+  background-color: #ffd017;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  margin: 2rem auto;
+  padding: 1rem;
+  transition: 0.3% linear all;
+  text-align: center;
+  width: 90%;
+}
+.optionsYellow:hover {
+  background-color: darken(#ffd017, 20%);
+}
