@@ -160,19 +160,18 @@ var routes = [
   },
   
   {
-    path: "/personalityTestResults",
-    name: "Personality Test Results",
-    icon: "ni ni-spaceship text-red ",
-    component: personalityTestResults,
-    layout: "/admin",
-  },
-  {
     path: "/personalityTestList",
     name: "Personality Test List",
     icon: "ni ni-spaceship text-red ",
     component: personalityTestList,
     layout: "/admin",
   },
+  {
+    path: "/personalityTestResults",
+    name: "Personality Test Results",
+    component: personalityTestResults,
+    layout: "/admin",
+  },  
   {
     path: "/personalityTestDetail",
     component: personalityTestDetail,
