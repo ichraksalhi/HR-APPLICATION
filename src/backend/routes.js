@@ -14,10 +14,17 @@ import PostJob from "backend/views/GJob/PostJob";
 import ListJobsDesap from "backend/views/GJob/ListJobsDesap";
 
 //chouchou
-
 import ListReclamations from "backend/views/GReclamation/ListReclamations.js"; 
 import ReclamationDetails from "backend/views/GReclamation/ReclamationDetails.js";
 import StatReclamation from "backend/views/GReclamation/StatReclamation.js";
+
+//manou
+import personalityTestResults from "backend/views/GPersonalityTest/personalityTestResults";
+import personalityTestList from "backend/views/GPersonalityTest/ListPersonalityTest";
+import personalityTestDetail from "backend/views/GPersonalityTest/DetailsPersonalityTest";
+import AddPersonalityTest from "backend/views/GPersonalityTest/AddPersonalityTest";
+import AddHr from "backend/views/GPersonalityTest/AddHr";
+
 
 var routes = [
   {
@@ -148,11 +155,40 @@ var routes = [
   },
   {
     path: "/ReclamationDetails",
-   
     component: ReclamationDetails, 
     layout: "/admin",
   },
- 
+  
+  {
+    path: "/personalityTestResults",
+    name: "Personality Test Results",
+    icon: "ni ni-spaceship text-red ",
+    component: personalityTestResults,
+    layout: "/admin",
+  },
+  {
+    path: "/personalityTestList",
+    name: "Personality Test List",
+    icon: "ni ni-spaceship text-red ",
+    component: personalityTestList,
+    layout: "/admin",
+  },
+  {
+    path: "/personalityTestDetail",
+    component: personalityTestDetail,
+    layout: "/admin",
+  },
+  {
+    path: "/addPersonalityTest",
+    component: AddPersonalityTest,
+    layout: "/admin",
+  },
+  {
+    path: "/addHr",
+    component: AddHr,
+    layout: "/admin",
+  },
+
 
 
 ];

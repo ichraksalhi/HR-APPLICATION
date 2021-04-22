@@ -1,0 +1,82 @@
+[
+    {
+        "question": "In my work environment, it is most important to me...",
+        "answer": "A1",
+        "optionA": {
+            "text": "To help co-workers and to be in a peaceful environment.",
+            "value": 2
+        },
+        "optionB": {
+            "text": "To feel that my co-workers admire me and to be free from rigid rules.",
+            "value": 4
+        },
+        "optionC": {
+            "text": "o know exactly what is expected of me and to finish one task before moving to another.",
+            "value": 6
+        },
+        "optionD": {
+            "text": "To get things done and to see results.",
+            "value": 8
+        }
+    },
+    {
+        "question": "When someone offers an opinion or conclusion and I disagree, I am most likely to...",
+        "answer": "A2",
+        "optionA": {
+            "text": "Tell them that I disagree.",
+            "value": 2
+        },
+        "optionB": {
+            "text": "Say something humorous.",
+            "value": 4
+        },
+        "optionC": {
+            "text": "Ask for more information.",
+            "value": 6
+        },
+        "optionD": {
+            "text": "Nod and say nothing.",
+            "value": 8
+        }
+    },
+    {
+        "question": "When I am working on a team and we encounter a difficulty of some kind, I am most likely to say...",
+        "answer": "A3",
+        "optionA": {
+            "text": "Lighten up! Just go with the flow!",
+            "value": 2
+        },
+        "optionB": {
+            "text": "Let's make a decision!",
+            "value": 4
+        },
+        "optionC": {
+            "text": "How do you feel? I'd like to make sure that everyone is comfortable.",
+            "value": 6
+        },
+        "optionD": {
+            "text": "Let's consider this more carefully? Do we have all of the data we need?",
+            "value": 8
+        }
+    },
+    {
+        "question": "My attitude towards detail work — like research and data analysis — is most often...",
+        "answer": "A4",
+        "optionA": {
+            "text": "Great. I enjoy research and analysis.",
+            "value": 2
+        },
+        "optionB": {
+            "text": "If it will get better and faster results, I'll do it",
+            "value": 4
+        },
+        "optionC": {
+            "text": "If it will make others think more highly of me, I'll do it.",
+            "value": 6
+        },
+        "optionD": {
+            "text": "If it will help other people or make things easier, I'll do it.",
+            "value": 8
+        }
+    }
+]
