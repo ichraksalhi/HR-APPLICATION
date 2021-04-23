@@ -12,25 +12,25 @@ const PersonalityTestSchema = new Schema({
     optionA: [
         {
             text : { type: String, required: true },
-            value: { type: Number, required: true }
+            value: { type: String, required: true }
         }
     ],
     optionB: [
         {
             text : { type: String, required: true },
-            value: { type: Number, required: true }
+            value: { type: String, required: true }
         }
     ],
     optionC: [
         {
             text : { type: String, required: true },
-            value: { type: Number, required: true }
+            value: { type: String, required: true }
         }
     ],
     optionD: [
         {
             text : { type: String, required: true },
-            value: { type: Number, required: true }
+            value: { type: String, required: true }
         }
     ],
     dateCreated: {

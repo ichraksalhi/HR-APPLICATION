@@ -6,3 +6,17 @@
 body{
     font-family: 'Quicksand', sans-serif;
 }
+
+
+.toast-invalid {
+    background-color: #F44336 !important;
+    border-radius: 5px !important;
+    color: #f8f8f8 !important;
+    display: flex;
+}
+
+.toast-valid {
+    background-color: #4caf50 !important;
+    border-radius: 5px !important;
+    color: #f8f8f8 !important;
+}

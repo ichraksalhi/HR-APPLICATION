@@ -19,10 +19,10 @@ import {
 const Question = (props) => (
   <tr>
     <td>{props.question.question}</td>
-    <td>{props.question.optionA.text}</td>
-        <td>{props.question.optionB.text}</td>
-        <td>{props.question.optionC.text}</td>
-        <td>{props.question.optionD.text}</td>
+    <td>{props.question.optionA.map(op=>op.text)}</td>
+        <td>{props.question.optionB.map(op=>op.text)}</td>
+        <td>{props.question.optionC.map(op=>op.text)}</td>
+        <td>{props.question.optionD.map(op=>op.text)}</td>
     <td>{props.question.dateCreated}</td>
 
     <td>
