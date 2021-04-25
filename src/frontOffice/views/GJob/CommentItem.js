@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import Moment from 'react-moment';
 const CommentItem = ({
     jobId,
-    comment: {_id, text,avatar,user,date}, auth
+    comment: {_id, text,avatar,user,date,firstname}, auth
 }) => {
     return (
         <>
@@ -15,8 +15,8 @@ const CommentItem = ({
                     <img src={avatar} alt="Image placeholder"/>
                   </div>
                   <div className="comment-body">
-                    <h3>{user}</h3>
-                    <div className="meta">Posted on  <Moment format="YYYY/MM/DD">{date}</Moment></div>
+                    <h3>{user.firstname}</h3>
+                    <div>PostedOn:&nbsp;<Moment format="YYYY/MM/DD">{date}</Moment></div>
                     <p>{text}</p>
                   </div>
                 </li>              

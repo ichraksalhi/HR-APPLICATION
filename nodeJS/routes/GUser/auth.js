@@ -23,7 +23,7 @@ async function find(req,res){
 }
 router.get('/',auth,find);
 
-//@route GET api/auth
+//@route POST api/auth
 //@desc Authenticate User & get user
 //@access Public
 router.post('/', [

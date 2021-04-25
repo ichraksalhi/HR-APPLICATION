@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { useLocation, Route, Switch, Redirect } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
@@ -9,7 +9,19 @@ import Sidebar from "backend/components/Sidebar/Sidebar.js";
 
 import routes from "backend/routes.js";
 
+import {loadUser} from '../../actions/auth'; 
+import setAuthToken from '../../utils/setAuthToken';
+import store from '../../store';
+
+
+if(localStorage.token){
+  setAuthToken(localStorage.token);
+}
 const Admin = (props) => {
+  useEffect(() =>{
+    store.dispatch(loadUser());
+}, []); //component didMount
+
   const mainContent = React.useRef(null);
   const location = useLocation();
 

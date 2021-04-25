@@ -48,15 +48,12 @@ const PostJobSchema = new mongoose.Schema({
     ],
     requirements: [
         {
-            text: {
-                type: String,
-                trim: true
-            }     
+            text: { type: String }     
         }
     ],
     skills: [
         {
-            title: {
+            title:{
                 type: String,
                 trim: true
             }     
@@ -72,7 +69,10 @@ const PostJobSchema = new mongoose.Schema({
                 type: String,
                 required: true
             },
-            name: {
+            firstname: {
+                type: String
+            },
+            lastname: {
                 type: String
             },
             avatar: {

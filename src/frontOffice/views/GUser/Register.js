@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect } from "react-router-dom";
+import { Link, Redirect,useHistory } from "react-router-dom";
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import bg from '../../assets/images/bg_1.jpg';
 import NavbarLogReg from 'frontOffice/Layouts/NavbarLogReg';
@@ -8,9 +8,10 @@ import { setAlert } from '../../../actions/alert';
 import { register } from '../../../actions/auth';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
+import Recaptcha from 'react-recaptcha';
 
 const Register = ({setAlert, register, isAuth}) => {
+    const history = useHistory();
     const [formData, setFormData] = useState({
       firstname: '',
       lastname: '',
@@ -18,21 +19,33 @@ const Register = ({setAlert, register, isAuth}) => {
       password: '',
       password2: ''
     });
+    const [isVerified, setisVerified] = useState(false);
+
     const {firstname,lastname,email,password,password2} = formData;
     const onChange = e =>setFormData({...formData, [e.target.name]: e.target.value}); //using onChange for every field
     const onSubmit = async e =>{
         e.preventDefault();
+        if (isVerified){
+          alert('You are successfuly subscribe!');
+        }else{
+          alert('Verify that you are a human!');
+        }
         if(password !== password2){
             setAlert('Passwords do not match','danger'); 
         }
         else
             {   
-               register({firstname,lastname, email,password});  
+               //register({firstname,lastname, email,password});  
             }
+
     }
- /* if(isAuth){
-    return <Redirect to='/'/>
-  }*/
+    const recapchaLoaded=()=>{
+        console.log("recaptcha successfully loaded");
+    }
+  //Redirect if registed
+  if(isAuth){
+    history.push('/');
+  }
       return (
         <>
         
@@ -68,12 +81,19 @@ const Register = ({setAlert, register, isAuth}) => {
                 <span className="focus-input100" data-placeholder="&#xf191;"></span>
               </div>
               
+              
              <br/>
               <div className="container-login100-form-btn">
                 <button className="login100-form-btn">
                   SIGN UP
                 </button>
               </div>
+              <Recaptcha
+                sitekey="6LeEz7caAAAAAMveEusK2V6AWnDcuXXcXIfUy5AH
+                "
+                render="explicit"
+                onloadCallback={recapchaLoaded}
+              />
               <br/>
             </form>
           </div>
@@ -90,12 +110,12 @@ const Register = ({setAlert, register, isAuth}) => {
 Register.propTypes= {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
-  //isAuth: PropTypes.bool
+  isAuth: PropTypes.bool
 };
-/*const mapStateToProps = state => (
+const mapStateToProps = state => (
   {
     isAuth: state.auth.isAuthenticated
   }
-);*/
-//export default connect(mapStateToProps, {setAlert, register}) (Register);
-export default connect(null, {setAlert, register}) (Register);
+);
+export default connect(mapStateToProps, {setAlert, register}) (Register);
+//export default connect(null, {setAlert, register}) (Register);

@@ -16,7 +16,7 @@ export const loadUser = () => async dispatch => {
         const res = await axios.get('http://localhost:5000/api/auth');        
         dispatch({
             type: USER_LOADED,
-            payload: res.data
+            payload: res.data,
         });
     }
     catch(err){
@@ -80,9 +80,5 @@ export const login= ({ email, password}) => async dispatch => {
     }
 }
 
-//LOGOUT
-export const logout = () => dispatch => {
-    dispatch({type: LOGOUT})
-}
 
 

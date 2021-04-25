@@ -10,9 +10,9 @@ import { login } from '../../../actions/auth';
 import { logout } from '../../../actions/auth';
 import { createNonNullExpression, createNull } from 'typescript';
 
-/*import FacebookLogin from '../../Layouts/social/FacebookLogin/'
+import FacebookLogin from '../../Layouts/social/FacebookLogin/'
 import GoogleLogin from '../../Layouts/social/GoogleLogin/'
-import LinkedinLogin from '../../Layouts/social/LinkedinLogin/'*/
+import LinkedinLogin from '../../Layouts/social/LinkedinLogin/'
 
 
 const Login = ({ login, isAuth }) => {
@@ -70,9 +70,8 @@ const Login = ({ login, isAuth }) => {
               <div>
                 <center>
                 <ul className="ftco-social list-unstyled float-md-center">
-                <li className="ftco-animate"><Link to="#"><span className="icon-google"></span></Link></li>
                 </ul>
-               
+                    <GoogleLogin />
                 </center>
 
               </div>

@@ -11,12 +11,13 @@ import image2 from '../../frontOffice/assets/images/image_2.jpg';
 import image3 from '../../frontOffice/assets/images/image_3.jpg';
 import image4 from '../../frontOffice/assets/images/image_4.jpg';
 import bg from '../../frontOffice/assets/images/bg_1.jpg';
-
+import Navbar from '../Layouts/Navbar';
 
 
 const Home = () => {
     return (
       <>
+    <Navbar/>                 
 	  <div className="hero-wrap img" style={{ backgroundImage: `url(${bg})`}}>
       <div className="overlay"></div>
       <div className="container">

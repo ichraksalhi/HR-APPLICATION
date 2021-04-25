@@ -2,14 +2,19 @@ import React, {Fragment} from 'react';
 import {Link} from 'react-router-dom' ;
 import Moment from 'react-moment';
 import { connect } from 'react-redux';
+import { FacebookShareButton,  FacebookShareCount, FacebookIcon, LinkedinShareButton, LinkedinIcon, LinkedinShareCount } from "react-share";
 import PropTypes from 'prop-types';
 import MapJob from './MapJob';
 import CommentForm from './CommentForm';
 import CommentItem from './CommentItem';
+import Navbar from 'frontOffice/Layouts/Navbar';
+
 const JobItemDetails = ({
-    job: { _id, nbrApplied, title, location, description, salary, studyLevel, experience, contractType, company, user, likes, comments, requirements, createdAt, skills  }
+    job: { _id, nbrApplied, title, location, description, salary, studyLevel, experience, contractType, company, user, likes, comments, requirements, createdAt, skills, activate  }
 }) => {
     return (
+      <>
+        <Navbar/>                 
         <section className="ftco-section bg-light">
         <div className="container">
             <div className="row">
@@ -25,9 +30,17 @@ const JobItemDetails = ({
                                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                   <Link to="" className="btn btn-outline-primary" >Apply Job</Link>   
                                   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-                                  <p style={{backgroundColor: "#f7f3e9"}}>{nbrApplied} candidates applyed</p>                              
+                                  <p style={{backgroundColor: "#f7f3e9"}}>{nbrApplied} candidates applyed</p> 
+                                                            
                               </div>
                         <span className="subadge">{company}</span>
+                        {
+                                    activate === 0 ? 
+                                    <div class="alert alert-danger" role="alert">
+                                        Offer Closed
+                                    </div>   :
+                                    <p></p>                          
+                                  }  
                         <div className="tagcloud">
                             <a href="#" className="tag-cloud-link">.Net</a>
                             <a href="#" className="tag-cloud-link">SQL</a>
@@ -74,6 +87,18 @@ const JobItemDetails = ({
                                 </p>
                                 <br/>
                                 <hr/>
+                                <div>
+                                
+                                  
+                                <FacebookShareButton url={"http://127.0.0.1:3000/DetailJob"} appId={2682095355411600}>
+                                    <FacebookShareCount url={"http://127.0.0.1:3000/DetailJob"} />
+                                        <FacebookIcon size={30} round={true}></FacebookIcon>
+                                    </FacebookShareButton>
+                                    
+                                <LinkedinShareButton url={"http://127.0.0.1:3000/DetailJob"} appId={2682095355411600}>
+                                        <LinkedinIcon size={30} round={true}></LinkedinIcon>
+                                    </LinkedinShareButton>    
+                                </div>
                             </div>
                           </div>
                      
@@ -111,13 +136,10 @@ const JobItemDetails = ({
           </div>
         </div>
       </div>
-      <div className="container">
-            <div className="row">
-                <MapJob />
-            </div>
-          </div>
-    </section>
-   
+      <MapJob location={location}/>
+
+        </section>
+      </>                  
     );
 };
 /*JobItemDetails.defaultProps = {

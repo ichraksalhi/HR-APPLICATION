@@ -14,12 +14,14 @@ const uri = process.env.ATLAS_URI;
 mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }
 );
 
+//GJOB
 app.use('/api/auth', require('./routes/GUser/auth'));
 app.use('/api/register', require('./routes/GUser/register'));
 app.use('/api/Job', require('./routes/GJob/Job'));
+app.use('/api/JobHR', require('./routes/GJob/HR'));
+app.use('/api/JobAdmin', require('./routes/GJob/Admin'));
 
 //GReclamation 
-
 const reclamationRouter = require('./routes/GReclamation/reclamation');
 const userRouter = require('./routes/GUser/user');
 const personality = require('./routes/GPersonalityTest/personality');

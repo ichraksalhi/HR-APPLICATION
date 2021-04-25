@@ -3,9 +3,13 @@ import Maps from "backend/views/examples/Maps.js";
 import Tables from "backend/views/examples/Tables.js";
 import Icons from "backend/views/examples/Icons.js";
 import UsersList from "backend/views/examples/UsersList.js";
+
+
+//Job
 import ListJobs from "backend/views/GJob/ListJobs";
 import activatedJobs from "backend/views/GJob/activatedJobs";
 import unactivatedJobs from "backend/views/GJob/unactivatedJobs";
+import ListJobsNonApp from "backend/views/GJob/ListJobsNonApp";
 import JobDetails from "backend/views/GJob/JobDetails";
 import Ranking from "backend/views/GJob/ranking";
 import scraping from "backend/views/examples/scrapping";
@@ -13,12 +17,12 @@ import JobDetailsDesap from"backend/views/GJob/JobDetailsDesap";
 import PostJob from "backend/views/GJob/PostJob";
 import ListJobsDesap from "backend/views/GJob/ListJobsDesap";
 
-//chouchou
+//Reclamation
 import ListReclamations from "backend/views/GReclamation/ListReclamations.js"; 
 import ReclamationDetails from "backend/views/GReclamation/ReclamationDetails.js";
 import StatReclamation from "backend/views/GReclamation/StatReclamation.js";
 
-//manou
+//Personality test
 import personalityTestResults from "backend/views/GPersonalityTest/personalityTestResults";
 import personalityTestList from "backend/views/GPersonalityTest/ListPersonalityTest";
 import personalityTestDetail from "backend/views/GPersonalityTest/DetailsPersonalityTest";

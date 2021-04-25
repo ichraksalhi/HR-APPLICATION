@@ -33,7 +33,7 @@ const JobItem = ({
           </div>
           <div className="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
             <div>
-                <button onClick={e=> addLike(_id) } className="icon text-center d-flex justify-content-center align-items-center icon mr-2">
+                <button onClick={e=> removeLike(_id) } className="icon text-center d-flex justify-content-center align-items-center icon mr-2">
                     <span className="icon-heart">{likes.length}</span>
                 </button>
             </div>
