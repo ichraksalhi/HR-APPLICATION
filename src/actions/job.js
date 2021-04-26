@@ -99,6 +99,27 @@ export const getJobsnonAppAdmin = () => async dispatch => {
         });
     }
 }
+
+
+
+//Get list to approved by admin
+export const getJobsnonApp = () => async dispatch => {
+    try{
+        const res= await axios.get('http://localhost:5000/api/JobAdmin/nonApp');
+        dispatch({
+            type: GET_JOBS_NONAPP,
+            payload: res.data
+        });
+    }
+    catch(err){
+        dispatch({
+            type: JOB_ERROR,
+            payload: {msg: err.response.statusText, status: err.response.status}
+        });
+    }
+}
+
+
 //delete job by HR
 export const deleteJob = (id) => async dispatch => {
     try{
