@@ -1,20 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
 
 // reactstrap components
 import {
-  Badge,
   Card,
   CardHeader,
   CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Media,
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
   Table,
   Container,
   Row,
@@ -24,19 +17,23 @@ import {
   InputGroupText,
   Input,
   InputGroup,
-  UncontrolledTooltip,
 } from "reactstrap";
-import {Link} from 'react-router-dom' ;
+import { getJobsnonApp } from '../../../actions/job';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import Spinner from '../../../frontOffice/Layouts/Spinner';
 // core components
 import UserHeader from "backend/components/Headers/UserHeader";
+import JobItem from "./JobItem";
 
-const ListJobsDesap = () => {
-  return (
+const ListJobsDesap = ({getJobsnonApp, job: {jobs, loading}}) => {
+      useEffect(() => {
+        getJobsnonApp();
+      }, [getJobsnonApp]);
+      return loading ? <Spinner/>  :(
     <>
       <UserHeader />
-      {/* Page content */}
       <Container className="mt--7" fluid>
-        {/* Table */}
         <Form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
             <FormGroup className="mb-0">
               <InputGroup className="input-group-alternative">
@@ -70,90 +67,11 @@ const ListJobsDesap = () => {
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                       
-                        <Media>
-                          <span className="mb-0 text-sm">
-                          Medior .Net Software Engineer
-                          </span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>2500 dt</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-warning" />
-                        Full-Time
-                      </Badge>
-                    </td>      
-                    <td>
-                    sousse, Sousse, 4000, Tunisia.
-                    </td>
-                 <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                          >
-                            <Link to="/JobDetailsDesap"> Details</Link>
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                       
-                        <Media>
-                          <span className="mb-0 text-sm">
-                          Software Development Team Manager
-                                                    </span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>1800 dt</td>
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-success" />
-                          CDI
-                      </Badge>
-                    </td>
-                    <td>
-                    sousse, Sousse, 4000, Tunisia.
-                    </td>              
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                          >
-                            <Link to="/JobDetailsDesap"> Details</Link>
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-            </tbody>
+                  {jobs.map(job => (
+                        <JobItem key={job._id} job={job} />
+                      ))}
+                 </tr>
+                </tbody>
             </Table>
               <CardFooter className="py-4">
                 <nav aria-label="...">
@@ -217,4 +135,11 @@ const ListJobsDesap = () => {
   );
 };
 
-export default ListJobsDesap;
+ListJobsDesap.propTypes ={
+  getJobsnonApp: PropTypes.func.isRequired,
+  job: PropTypes.object.isRequired
+}
+const mapStateToProps = state => ({
+  job: state.job
+});
+export default connect(mapStateToProps, {getJobsnonApp})(ListJobsDesap);

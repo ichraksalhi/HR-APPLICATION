@@ -1,20 +1,13 @@
-import React from "react";
-
+import React, {useEffect, Fragment} from 'react';
 // reactstrap components
 import {
   Badge,
   Card,
   CardHeader,
   CardFooter,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  Media,
   Pagination,
   PaginationItem,
   PaginationLink,
-  Progress,
   Table,
   Container,
   Row,
@@ -24,16 +17,24 @@ import {
   InputGroupText,
   Input,
   InputGroup,
-  UncontrolledTooltip,
 } from "reactstrap";
 import {Link} from 'react-router-dom' ;
-import UserHeader from "backend/components/Headers/UserHeader";
+import UserHeader from "../../components/Headers/UserHeader";
+import {getJobsHRAct} from '../../../actions/job';
+import { connect } from 'react-redux';
+import Spinner from '../../../frontOffice/Layouts/Spinner';
+import PropTypes from 'prop-types';
+import JobItem from './JobItem';
 // core components
 
-const activatedJobs = () => {
-  return (
-    <>
-      <UserHeader />
+const ActivatedJobs = ({getJobsHRAct, job: {jobs, loading}}) => {
+  useEffect(() => {
+    getJobsHRAct();
+  }, [getJobsHRAct]);
+
+  return loading ? <Spinner/>  :(
+    <Fragment>
+<UserHeader />
       {/* Page content */}
       <Container className="mt--7" fluid>
         {/* Table */}
@@ -52,13 +53,12 @@ const activatedJobs = () => {
             </FormGroup>
           </Form>
           <br/>
-            <Card className="shadow">
+          <Card className="shadow">
               <CardHeader className="border-0">
                 <h3 className="mb-0">Activated Jobs</h3>
-                <Link to="/activatedJobs">List Jobs</Link>
+                <Link to="/admin/ListJobs">List Jobs</Link>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <Link to="/unactivatedJobs">Unactivated Jobs (Expired)</Link>
-
+                <Link to="/admin/deactivatedJobs">Dactivated Jobs (Expired)</Link>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">
@@ -72,169 +72,10 @@ const activatedJobs = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                       
-                        <Media>
-                          <span className="mb-0 text-sm">
-                          Medior .Net Software Engineer
-                          </span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>2500 dt</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-warning" />
-                        Full-Time
-                      </Badge>
-                    </td>      
-                    <td>
-                    sousse, Sousse, 4000, Tunisia.
-                    </td>
-                    <td>
-                    ✔
-                    </td>
-                 <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                          >
-                            <Link to="/JobDetails"> Details</Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link to="/"> Delete</Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                          <Link to="/"> Ranking </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                          <Link to="/"> Unactivate </Link>
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">
-                       
-                        <Media>
-                          <span className="mb-0 text-sm">
-                          Software Development Team Manager
-                                                    </span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>1800 dt</td>
-                    <td>
-                      <Badge color="" className="badge-dot">
-                        <i className="bg-success" />
-                          CDI
-                      </Badge>
-                    </td>
-                    <td>
-                    sousse, Sousse, 4000, Tunisia.
-                    </td>
-                    <td>
-                    ✔
-                    </td>
-                  
-              
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                          >
-                            <Link to="/JobDetails"> Details</Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link to="/"> Delete</Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                          <Link to="/"> Ranking </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                          <Link to="/"> Unactivate </Link>
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      <Media className="align-items-center">    
-                        <Media>
-                          <span className="mb-0 text-sm">Software Development Team Manager</span>
-                        </Media>
-                      </Media>
-                    </th>
-                    <td>3150 dt</td>
-                    <td>
-                      <Badge color="" className="badge-dot mr-4">
-                        <i className="bg-danger" />
-                        Full-Time
-                      </Badge>
-                    </td>
-                     <td>
-                    sousse, Sousse, 4000, Tunisia.
-                    </td>
-                    <td>
-                    ✔
-                    </td>
-            
-                    <td className="text-right">
-                      <UncontrolledDropdown>
-                        <DropdownToggle
-                          className="btn-icon-only text-light"
-                          href="#pablo"
-                          role="button"
-                          size="sm"
-                          color=""
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fas fa-ellipsis-v" />
-                        </DropdownToggle>
-                        <DropdownMenu className="dropdown-menu-arrow" right>
-                          <DropdownItem
-                          >
-                            <Link to="/JobDetails"> Details</Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                            <Link to="/"> Delete</Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                          <Link to="/"> Ranking </Link>
-                          </DropdownItem>
-                          <DropdownItem>
-                          <Link to="/"> Unactivate </Link>
-                          </DropdownItem>
-                        </DropdownMenu>
-                      </UncontrolledDropdown>
-                    </td>
-                  </tr>
-            </tbody>
+                  {jobs.map(job => (
+                        <JobItem key={job._id} job={job} />
+                      ))}                  
+                </tbody>
             </Table>
               <CardFooter className="py-4">
                 <nav aria-label="...">
@@ -289,12 +130,21 @@ const activatedJobs = () => {
                 </nav>
               </CardFooter>
             </Card>
-          </div>
+         
+         </div>
         </Row>
         {/* Dark table */}      
       </Container>
- </>
-  );
-};
 
-export default activatedJobs;
+    </Fragment>
+    );
+};
+ActivatedJobs.propTypes ={
+  getJobsHRAct: PropTypes.func.isRequired,
+  job: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  job: state.job
+});
+export default connect(mapStateToProps, {getJobsHRAct})(ActivatedJobs);

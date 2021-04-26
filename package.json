@@ -11,7 +11,10 @@
     "build:scss": "npm run compile:scss && npm run minify:scss && npm run map:scss"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": [
     ">0.2%",
@@ -20,6 +23,9 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.9",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
     "@fortawesome/fontawesome-free": "5.15.2",
     "@iconify-icons/mdi": "^1.1.13",
     "@mdi/font": "^5.9.55",
@@ -37,6 +43,8 @@
     "materialize-css": "^1.0.0",
     "moment": "2.29.1",
     "mongoose": "^5.12.5",
+    "node-cron": "^3.0.0",
+    "node-crontab": "0.0.8",
     "node-sass": "^4.14.1",
     "node-sass-package-importer": "5.3.2",
     "nouislider": "14.6.3",
@@ -51,6 +59,7 @@
     "react-helmet": "^6.1.0",
     "react-linkedin-login-oauth2": "^1.0.9",
     "react-moment": "^1.1.1",
+    "react-recaptcha": "^2.3.10",
     "react-redux": "^7.2.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",

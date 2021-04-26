@@ -24,12 +24,12 @@ app.use('/api/JobAdmin', require('./routes/GJob/Admin'));
 //GReclamation 
 const reclamationRouter = require('./routes/GReclamation/reclamation');
 const userRouter = require('./routes/GUser/user');
-const personality = require('./routes/GPersonalityTest/personality');
-
 
 app.use('/reclamation', reclamationRouter);
 app.use( '/user' ,userRouter);
-app.use('/personalityTest', personality);
+
+//
+app.use('/personalityTest',require('./routes/GPersonalityTest/personality'));
 
 
 
