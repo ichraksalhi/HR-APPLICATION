@@ -96,13 +96,13 @@ var routes = [
   },
   {
     path: "/activatedJobs",
-    name: "activatedJobs",
+    // name: "activatedJobs",
     component: activatedJobs,
     layout: "/admin",
   },
   {
     path: "/unactivatedJobs",
-    name: "unactivatedJobs",
+    // name: "unactivatedJobs",
     component: unactivatedJobs,
     layout: "/admin",
   },
