@@ -16,7 +16,6 @@ import {
   import {deleteJob} from '../../../actions/job';
   import {Button, ButtonToolBar} from 'react-bootstrap';
   import Popup from './Popup';
-import PostJob from './PostJob';
 
 const JobItemNonApp = ({
     job: { _id, nbrApplied, title, location, description, salary, studyLevel, experience,activate, contractType, company, user, likes, comments, requirements, createdAt, skills  }
@@ -81,7 +80,7 @@ const JobItemNonApp = ({
                         <Popup 
                       title ="Job Details"
                       app= "app"
-                      detail = "Would you like to see more details to Approve this Job?"
+                      detail = "Would you like to see more details to Approve this Job? See more to make your decision"
                       id = {_id}
                       openPopup ={openPopup} 
                       setOpenPopup={setOpenPopup}>

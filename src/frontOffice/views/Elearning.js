@@ -4,8 +4,8 @@ import bg from "../../frontOffice/assets/images/bg_1.jpg";
 import { Helmet } from "react-helmet";
 
 import Header from "../Layouts/Header";
-import { Icon, InlineIcon } from "@iconify/react";
-import cubeOutline from "@iconify-icons/mdi/cube-outline";
+//import { Icon, InlineIcon } from "@iconify/react";
+//import cubeOutline from "@iconify-icons/mdi/cube-outline";
 
 const Elearning = () => {
   return (
@@ -158,7 +158,6 @@ const Elearning = () => {
         <section>
           <div style={{ textAlign: "center" }}>
             <span className="mdi mdi-cube-outline ">
-              <Icon className="mdi mdi-cube-outline cube" icon={cubeOutline} />
             </span>
           </div>
 

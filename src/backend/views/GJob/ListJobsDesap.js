@@ -18,7 +18,7 @@ import {
   Input,
   InputGroup,
 } from "reactstrap";
-import { getJobsnonApp } from '../../../actions/job';
+import { getJobsnonAppAdmin } from '../../../actions/job';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../../../frontOffice/Layouts/Spinner';
@@ -26,10 +26,10 @@ import Spinner from '../../../frontOffice/Layouts/Spinner';
 import UserHeader from "backend/components/Headers/UserHeader";
 import JobItem from "./JobItem";
 
-const ListJobsDesap = ({getJobsnonApp, job: {jobs, loading}}) => {
+const ListJobsDesap = ({getJobsnonAppAdmin, job: {jobs, loading}}) => {
       useEffect(() => {
-        getJobsnonApp();
-      }, [getJobsnonApp]);
+        getJobsnonAppAdmin();
+      }, [getJobsnonAppAdmin]);
       return loading ? <Spinner/>  :(
     <>
       <UserHeader />
@@ -136,10 +136,10 @@ const ListJobsDesap = ({getJobsnonApp, job: {jobs, loading}}) => {
 };
 
 ListJobsDesap.propTypes ={
-  getJobsnonApp: PropTypes.func.isRequired,
+  getJobsnonAppAdmin: PropTypes.func.isRequired,
   job: PropTypes.object.isRequired
 }
 const mapStateToProps = state => ({
   job: state.job
 });
-export default connect(mapStateToProps, {getJobsnonApp})(ListJobsDesap);
+export default connect(mapStateToProps, {getJobsnonAppAdmin})(ListJobsDesap);

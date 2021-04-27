@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Icon, InlineIcon } from "@iconify/react";
 import clockOutline from "@iconify-icons/mdi/clock-outline";
+//import {Icon, InlineIcon} from "@iconify/react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import logo from "../../assets/images/discLogo.png";
@@ -264,7 +264,6 @@ export default class PersonalityTest extends Component {
               <span className="right">
                 {time.minutes}:{time.seconds}
                 <span>
-                  <Icon className="lifeline" icon={clockOutline} />
                 </span>
               </span>
             </p>

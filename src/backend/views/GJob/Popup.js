@@ -12,11 +12,11 @@ const Popup = (props) => {
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const Details = (id) =>{
-    if(app != ""){
-      history.push(`/admin/JobDetails/${id}`);
+    if(app === "app"){
+      history.push(`/admin/jobAdDetails/${id}`);
+    }else{
+      history.push(`/admin/jobDetails/${id}`);
     }
-    //history.push(`/admin/jobDetails/${id}`);
-    //alert(id);
   }
   return (
     <Dialog

@@ -23,7 +23,8 @@ import {
   InputGroupAddon,
   InputGroupText,
   Input,
-  InputGroup
+  InputGroup,
+  Button
 } from "reactstrap";
 import {Link} from 'react-router-dom' ;
 // core components
@@ -61,9 +62,23 @@ const ListJobs = ({getJobsHR, job: {jobs, loading}}) => {
             <Card className="shadow">
               <CardHeader className="border-0">
                 <h3 className="mb-0">List Jobs</h3>
+                <div>
                 <Link to="/admin/activatedJobs">Activated Jobs</Link>
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                 <Link to="/admin/deactivatedJobs">Dactivated Jobs (Expired)</Link>
+                
+                <div className="col text-right">
+                  <Button color="success" size="sm">
+                    <Link
+                      to="/admin/PostJob"
+                      style={{ color: "white" }}
+                    >
+                      Add Job
+                    </Link>
+                  </Button>
+                  </div>
+              
+                </div>
               </CardHeader>
               <Table className="align-items-center table-flush" responsive>
                 <thead className="thead-light">

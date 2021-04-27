@@ -2,30 +2,20 @@ import "./App.css";
 import React, { Fragment, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-import logo from "./logo.svg";
-import React, { Fragment, useEffect } from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Layout from "./frontOffice/Layouts/Layout";
-import Home from "./frontOffice/views/Home";
-import BrowseJobs from "./frontOffice/views/GJob/BrowseJobs";
 import Elearning from "./frontOffice/views/Elearning";
-import Blog from "./frontOffice/views/Blog";
-import BlogSingle from "./frontOffice/views/BlogSingle";
 import Candidates from "./frontOffice/views/Candidates";
 import DetailJob from "./frontOffice/views/GJob/DetailJob";
 //import Navbar  from './frontOffice/Layouts/Navbar';<Navbar/>
 //import Footer from 'frontOffice/Layouts/Footer';   <Footer/>
 import Login from "frontOffice/views/GUser/Login";
 import Register from "frontOffice/views/GUser/Register";
+import BrowseJobs from "frontOffice/views/GJob/BrowseJobs";
 import Admin from "backend/views/examples/UsersList";
 //import Header from 'frontOffice/Layouts/Header';  <Header/>
 //import Sidebar from 'frontOffice/Layouts/Sidebar';                        <Sidebar/>
 //redux
 import { Provider } from "react-redux";
 import store from "./store";
-import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
 //import './backend/assets/css/argon-dashboard-react.css';
@@ -48,25 +38,15 @@ import TestResult from "frontOffice/views/GPersonalityTest/TestResult";
 
 import Layout from "./frontOffice/Layouts/Layout";
 import Home from "./frontOffice/views/Home";
-import BrowseJobs from "./frontOffice/views/GJob/BrowseJobs";
-import Elearning from "./frontOffice/views/Elearning";
 import Blog from "./frontOffice/views/Blog";
 import BlogSingle from "./frontOffice/views/BlogSingle";
-import Candidates from "./frontOffice/views/Candidates";
-import DetailJob from "./frontOffice/views/GJob/DetailJob";
 //import Navbar  from './frontOffice/Layouts/Navbar';<Navbar/>
 //import Footer from 'frontOffice/Layouts/Footer';<Footer/>
-import Login from "frontOffice/views/GUser/Login";
-import Register from "frontOffice/views/GUser/Register";
-import Admin from "backend/views/examples/UsersList";
 import Navbar from "frontOffice/Layouts/Navbar";
 //import Header from 'frontOffice/Layouts/Header';  <Header/>
 //import Sidebar from 'frontOffice/Layouts/Sidebar';                        <Sidebar/>
 //redux
-import { Provider } from "react-redux";
-import store from "./store";
 import { loadUser } from "./actions/auth";
-import setAuthToken from "./utils/setAuthToken";
 
 import NewReclamation from "frontOffice/views/GReclamation/NewReclamation";
 //import Reclamations from 'frontOffice/views/Reclamations';

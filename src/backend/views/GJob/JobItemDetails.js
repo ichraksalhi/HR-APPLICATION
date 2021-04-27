@@ -6,12 +6,16 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Row,
   Col,
   Button,
+  CardFooter,
+  FormGroup,
+  Form,
+  Input,
   Container,
-  CardFooter
+  Row,
 } from "reactstrap";
+import {Link} from "react-router-dom";
 import {deactivateJob} from '../../../actions/job';
 import {activateJob} from '../../../actions/job';
 const JobItemDetails = ({
@@ -27,17 +31,23 @@ const JobItemDetails = ({
   const close = () => {
     history.push("/admin/ListJobs");
   }
+  const updateJob=()=>{
+    history.push(`/admin/updateJob/${_id}`)
+  }
   return (
+    <>
     <Container className="mt--7" fluid>
-    <Row>
-      <Col  className="order-xl-1" xl="8">
-        <Card className="bg-secondary shadow">
-          <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-            <div className="d-flex justify-content-between">
+      <Row>
+        <div className="col">
+          <Card className="shadow">
+            <CardHeader className="border-0">
+              <h3 className="mb-0">Job Details</h3>
+              <hr/>
+              <div className="d-flex justify-content-between">
               {activate === 0 ? 
                 <Button
                   className="mr-4"
-                  color="info"
+                  color="primary"
                   onClick={actJob(_id)}
                   size="sm">
                   Activate
@@ -53,7 +63,7 @@ const JobItemDetails = ({
             {
               activate ===1 ?
               <Button
-              color="default"
+              color="primary"
               onClick={deactivate(_id)}
               size="sm">
             Deactivate
@@ -69,8 +79,8 @@ const JobItemDetails = ({
             }
              
 </div>
-          </CardHeader>
-          <CardBody className="pt-0 pt-md-4">
+            </CardHeader>
+            <CardBody className="pt-0 pt-md-4">
             <Row>
             </Row>
             <div className="text-center">
@@ -91,10 +101,10 @@ const JobItemDetails = ({
                 <br></br>
                 Experience: {experience}
                 <br/>
-                Skills: 
-                {skills.map(s => (
-                  s.title
-                    ))}
+                Skills
+            {skills.map(req => (
+                        <p>{req.title}</p>
+                ))}
               </div>
               <div>
               </div>
@@ -109,7 +119,9 @@ const JobItemDetails = ({
                 <p>
                 Requirements
                 {requirements.map(req => (
-                    req.text
+                  <p>
+                    ✔{req.text}
+                  </p>
                 ))}
                 </p>
                 }
@@ -117,14 +129,13 @@ const JobItemDetails = ({
             </div>
           </CardBody>
           <CardFooter>
-            <button className="btn btn-primary btn-lg btn-block">Edit</button>
+            <Button className="btn btn-success btn-block" onClick={()=>updateJob()}>Update</Button>
           </CardFooter>
         </Card>
-      </Col>
-    
-    </Row>
-  </Container>
- 
+        </div>
+      </Row>
+    </Container>
+  </>
   );}
 JobItemDetails.propTypes = {
   job: PropTypes.object.isRequired,

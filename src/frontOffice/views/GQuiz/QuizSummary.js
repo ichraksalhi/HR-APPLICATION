@@ -1,8 +1,8 @@
 import React, {Component,Fragment} from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from 'react-helmet';
-import { Icon, InlineIcon } from '@iconify/react';
-import checkCircleOutline from '@iconify-icons/mdi/check-circle-outline';
+//import { Icon, InlineIcon } from '@iconify/react';
+//import checkCircleOutline from '@iconify-icons/mdi/check-circle-outline';
 
 
 class QuizSummary extends Component {
@@ -41,7 +41,6 @@ class QuizSummary extends Component {
         <Helmet><title>Quiz Summary - E Learning</title></Helmet>
        <section className="quiz-summary">
         <div  style={{ textAlign: 'center' }}>
-            <span><Icon className="success-icon" icon={checkCircleOutline} /></span>
         </div>
         <h1>Congratulations you made it!</h1>
         <div className="container stats">

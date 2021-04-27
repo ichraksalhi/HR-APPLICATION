@@ -100,8 +100,6 @@ export const getJobsnonAppAdmin = () => async dispatch => {
     }
 }
 
-
-
 //Get list to approved by admin
 export const getJobsnonApp = () => async dispatch => {
     try{
@@ -201,14 +199,17 @@ export const getJob = id => async dispatch => {
     }
 }
 // Add Job
-export const addJob = (formData) => async dispatch => {
+export const addJob = ({title,description,studyLevel,experience,location,salary,contractType,requirements,skills}) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
-    };
+    }
+    const body = JSON.stringify({title,description,studyLevel,experience,location,salary,contractType,requirements,skills}); //stringify() convertit une valeur JavaScript en chaîne JSON
+
     try{
-      const res= await axios.post("http://localhost:5000/api/Job", formData, config);
+      const res = await axios.post('http://localhost:5000/api/Job', body, config);
+
       dispatch({
           type: ADD_JOB,
           payload: res.data

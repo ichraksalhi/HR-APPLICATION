@@ -6,41 +6,41 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Row,
   Col,
   Button,
+  CardFooter,
   Container,
-  CardFooter
+  Row,
 } from "reactstrap";
-import {deactivateJob} from '../../../actions/job';
-import {activateJob} from '../../../actions/job';
-const JobDetailsAdmin = ({
-  job: { _id, nbrApplied, title, location, description, salary, studyLevel, experience, contractType, company, user, likes, comments, requirements, createdAt, skills, activate  }
-,deactivateJob, activateJob}) => {
+import {ApprovedJob} from '../../../actions/job';
+const JobAdItemDetails = ({
+  job: { _id, title, location, description, salary, studyLevel, experience, contractType, user, requirements, skills}
+, ApprovedJob}) => {
   const history = useHistory();
-  const deactivate = async id =>{
-    deactivateJob(id);
-  }  
-  const actJob = async id =>{
-    activateJob(id);
+  const appJob = async id =>{
+    ApprovedJob(id);
+    alert("Job Approved!")
   }
   const close = () => {
-    history.push("/admin/ListJobs");
+    history.push("/admin/ListJobsNonApp");
   }
   return (
+    <>
     <Container className="mt--7" fluid>
-    <Row>
-      <Col  className="order-xl-1" xl="8">
-        <Card className="bg-secondary shadow">
-          <CardHeader className="text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
-            <div className="d-flex justify-content-between">
-              {activate === 0 ? 
+      <Row>
+        <div className="col">
+          <Card className="shadow">
+            <CardHeader className="border-0">
+              <h3 className="mb-0">Job Details</h3>
+              <h5>Would you like to approve this job?</h5>
+              <hr/>
+              <div className="d-flex justify-content-between">
                 <Button
                   className="mr-4"
-                  color="info"
-                  onClick={actJob(_id)}
+                  color="primary"
+                  onClick={appJob(_id)}
                   size="sm">
-                  Activate
+                  Approve
                 </Button>  :
                 <Button
                 className="float-right"
@@ -49,28 +49,9 @@ const JobDetailsAdmin = ({
                 onClick={close}>
                 X
               </Button>
-            }
-            {
-              activate ===1 ?
-              <Button
-              color="default"
-              onClick={deactivate(_id)}
-              size="sm">
-            Deactivate
-            </Button>
-            : 
-            <Button
-            className="float-right"
-            color="danger"
-            size="sm"
-            onClick={close}>
-            X
-          </Button>
-            }
-             
-</div>
-          </CardHeader>
-          <CardBody className="pt-0 pt-md-4">
+        </div>
+            </CardHeader>
+            <CardBody className="pt-0 pt-md-4">
             <Row>
             </Row>
             <div className="text-center">
@@ -91,10 +72,10 @@ const JobDetailsAdmin = ({
                 <br></br>
                 Experience: {experience}
                 <br/>
-                Skills: 
-                {skills.map(s => (
-                  s.title
-                    ))}
+                Skills:
+            {skills.map(req => (
+                        <p>{req.title}</p>
+                ))}
               </div>
               <div>
               </div>
@@ -109,7 +90,9 @@ const JobDetailsAdmin = ({
                 <p>
                 Requirements
                 {requirements.map(req => (
-                    req.text
+                  <p>
+                    ✔{req.text}
+                  </p>
                 ))}
                 </p>
                 }
@@ -117,20 +100,19 @@ const JobDetailsAdmin = ({
             </div>
           </CardBody>
           <CardFooter>
-            <button className="btn btn-primary btn-lg btn-block">Edit</button>
+            <Button className="btn btn-success btn-block">Update</Button>
           </CardFooter>
         </Card>
-      </Col>
-    
-    </Row>
-  </Container>
- 
+        </div>
+      </Row>
+    </Container>
+  </>
   );}
-JobDetailsAdmin.propTypes = {
+JobAdItemDetails.propTypes = {
   job: PropTypes.object.isRequired,
   //auth: PropTypes.object.isRequired,
 }
 const mapStateToProps = state => ({
  //auth: state.auth
 });
-export default connect(mapStateToProps, {deactivateJob, activateJob})(JobDetailsAdmin);
+export default connect(mapStateToProps, {ApprovedJob})(JobAdItemDetails);

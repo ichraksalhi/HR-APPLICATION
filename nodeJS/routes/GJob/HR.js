@@ -3,8 +3,8 @@ const router = express.Router();
 const auth = require('../../middleware/auth');
 const User = require('../../models/User');
 
-const cron = require('node-cron');
-const crontab = require('node-crontab');
+//const cron = require('node-cron');
+//const crontab = require('node-crontab');
 
 //@route Get api/Job/HR
 //@desc GET ALL jobs approved and created by HR
@@ -58,35 +58,6 @@ async(req,res)=> {
     }
 }
 );
-
-router.put('/deactivateCron/:id',
-async(req,res)=>{
-    try{
-            //dynamically deactivated job
-            crontab.scheduleJob("0 * * * * " , async function(){
-                //update
-                const jobDisac= await Job.findById(req.params.id);
-                jobDisac.activate = 0;
-                 await jobDisac.save();
-                 return res.status(200).json({msg: 'Cron update Job started !!'});    
-            },{
-            schedule: true,
-            timezone: "Africa/Tunis"
-            });
-
-    }
-    catch(err){
-        console.error(err.message);
-        if(err.kind === 'ObjectId'){ //it's not a valid objectId
-            return res.status(404).json({msg: 'Job not found'});
-         }
-        res.status(500).send('Server Error');   
-    }
-});
-
-
-
-
 //@route Get api/JobHR/DeActivateJob
 //@desc GET Activated jobs approved and created by HR
 //@access Private
@@ -195,5 +166,4 @@ async(req,res)=>{
         res.status(500).send('Server Error');   
     }
 });
-
 module.exports = router;

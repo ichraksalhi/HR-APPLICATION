@@ -10,23 +10,23 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../../../frontOffice/Layouts/Spinner'
 import { getJob } from '../../../actions/job';
-import  JobItemDetails  from './JobItemDetails';
+import  JobAdItemDetails  from './JobAdItemDetails';
 
-const JobDetails = ({getJob, job: {job, loading}, match}) => {
+const JobAdDetails = ({getJob, job: {job, loading}, match}) => {
   useEffect ( () => {
         getJob(match.params.id);
   }, [getJob]);
       return loading || job === null ? <Spinner/> : (
     <>
       <UserHeader />
-        <JobItemDetails job={job}></JobItemDetails>
+        <JobAdItemDetails job={job}></JobAdItemDetails>
     </>
   );
 };
-JobDetails.propTypes = {
+JobAdDetails.propTypes = {
   getJob: PropTypes.func.isRequired
 }
 const mapStateToProps = state => ({
     job: state.job
 });
-export default connect(mapStateToProps, {getJob})(JobDetails);
+export default connect(mapStateToProps, {getJob})(JobAdDetails);
