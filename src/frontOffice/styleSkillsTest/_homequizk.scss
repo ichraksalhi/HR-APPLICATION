@@ -1,0 +1,118 @@
+#home {
+    background-color:whitesmoke;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: space-around;
+    height : 120vh;
+    width:100vw;
+  
+
+    section {
+        background: rgba(0, 0, 0, 0.7);
+        padding-left: 2rem;
+        padding-right: 2rem ;
+        height: 60%;
+        width: 35%;
+        border-radius: 5px;
+        margin-top:10em;
+       
+    }
+    
+    .cube {
+        margin-top:4rem;
+        font-size: 8rem;
+        color : blueviolet;
+        
+    }
+    h1{
+        text-align: center;
+        color:white;
+        font-size: 3rem;
+        font-weight:400;
+        margin-bottom: 47px;
+    }
+    // .play-Button-Container{
+    //    width:100%;
+    // }
+    // a.play-button{
+    //     background-color: #57b846;
+    //     border-radius:30px ;
+    //     color:white;
+    //     display: block;
+    //     cursor:pointer;
+    //     padding:1rem;
+    //     text-align: center;
+    //     transition: 0.3% linear all;
+
+    // }
+    // a.play-button:hover{
+    //   background-color: darken(#57b846,10%);
+    //   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    // }
+    // .auth-Container{
+    //     width:100%;
+    //     display:flex;
+    //     justify-content: space-between;
+    //     margin-top:3em;
+    // }
+    // #login-Button{
+    //     background-color:#ea4355;
+    // }
+    // #login-Button:hover{
+    //     background-color:darken(#ea4355,10%);
+    //     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+    // }
+    // #signup-Button{
+    //     background-color:#1da1f2;
+    // }
+    // #signup-Button:hover{
+    //     background-color:darken(#1da1f2,10%);
+    //     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+
+    // }
+    
+    // .auth-Container .auth-Buttons{
+    //     color:white;
+    //     cursor : pointer;
+    //     border-radius: 30px;
+    //     padding:1rem 0;
+    //     text-align: center;
+    //     width:45%;
+    //     transition: 0.3% linear all; 
+
+
+
+    // }
+    .auth-Container .btn-grad {background-image: linear-gradient(to right, #7b4397 0%, #dc2430  51%, #7b4397  100%)}
+         .btn-grad {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 8px #eee;
+            border-radius: 30px;
+            display: block;
+            margin-top:2.5rem;
+
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+}
+
+@media(max-width: 768px){
+    #home section {
+        padding:0 1rem;
+        width:100%;
+        height:100%;
+    }
+}

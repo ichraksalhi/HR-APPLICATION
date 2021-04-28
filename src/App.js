@@ -23,12 +23,15 @@ import setAuthToken from "./utils/setAuthToken";
 //import Sidebar from 'frontOffice/Layouts/Sidebar'; <Sidebar/>
 //import homeQuiz from 'frontOffice/views/homeQuiz';
 
-// Quiz
-import QuizInstructions from "./frontOffice/views/GQuiz/QuizInstructions";
-import play from "./frontOffice/views/GQuiz/play";
-//import profile from './frontOffice/views/Profile'
-import QuizSummary from "frontOffice/views/GQuiz/QuizSummary";
-// Quiz
+//Skills test
+
+import QuizInstructions from './frontOffice/views/GSquiz/QuizInstructions';
+import play from './frontOffice/views/GSquiz/play';
+import profile from './frontOffice/views/Profile';
+import QuizSummary from './frontOffice/views/GSquiz/QuizSummary';
+import Test from './frontOffice/views/GSquiz/Test';
+
+/////////////////////////
 
 // Personality Test
 import PersonalityTest from "frontOffice/views/GPersonalityTest/PersonalityTest";
@@ -73,6 +76,8 @@ const App = () => {
                   <Route exact path="/" component={Home}></Route>
                   <Route exact path="/Home" component={Home}></Route>
                   <Route exact path="/Elearning" component={Elearning}></Route>
+                  <Route exact path="/Profile" component={profile}></Route>
+                            
                   <Route
                     exact
                     strict
@@ -109,17 +114,29 @@ const App = () => {
                     component={Reclamations}
                   ></Route>
                   {/* Quiz */}
-                  <Route
-                    exact
-                    path="/quizSummary"
-                    component={QuizSummary}
-                  ></Route>
-                  <Route
-                    exact
-                    path="/play/instructions"
-                    component={QuizInstructions}
-                  ></Route>
-                  <Route exact path="/play/quiz" component={play}></Route>
+                
+                  <Route  exact  path="/quizSummary" component={QuizSummary}></Route>
+                 <Route  exact  path="/play/instructions" component={QuizInstructions}></Route>
+                 <Route  exact  path="/play/quiz" component={play}></Route>
+                    <Route exact path="/Profile" component={profile}></Route>
+                            {localStorage.getItem("takeTest") === "true" &&
+                               localStorage.getItem("times") === "1" && (
+                                <Route exact path="/take-test" component={Test} /> )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   {/* Personality Test */}
                   <Route
                     exact

@@ -33,6 +33,20 @@ import personalityTestDetail from "backend/views/GPersonalityTest/DetailsPersona
 import AddPersonalityTest from "backend/views/GPersonalityTest/AddPersonalityTest";
 import AddHr from "backend/views/GPersonalityTest/AddHr";
 
+/// skills test 
+
+import listetest from "backend/views/examples/skillstest/listtest";
+import AddTest from "backend/views/examples/skillstest/AddnewTest";
+import Questions from "backend/views/examples/skillstest/Questions";
+import AddQuestion from "backend/views/examples/skillstest/AddQuestion";
+import UpdateQuestion from "backend/views/examples/skillstest/UpdateQuestion";
+import Result from "backend/views/examples/skillstest/Result";
+import mail from "backend/views/examples/skillstest/mail";
+import Profile from "backend/views/examples/Profile";
+
+
+
+
 
 var routes = [
   {
@@ -47,6 +61,13 @@ var routes = [
     name: "UsersList",
     icon: "ni ni-circle-08 text-purple",
     component: UsersList,
+    layout: "/admin",
+  },
+  {
+    path: "/user-profile",
+    name: "User Profile",
+    icon: "ni ni-single-02 text-yellow",
+    component: Profile,
     layout: "/admin",
   },
    //job routes
@@ -105,12 +126,6 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/ReclamationDetails",
-    component: ReclamationDetails, 
-    layout: "/admin",
-  },
-  
-  {
     path: "/personalityTestList",
     name: "Personality Test List",
     icon: "ni ni-spaceship text-red ",
@@ -123,6 +138,33 @@ var routes = [
     component: personalityTestResults,
     layout: "/admin",
   },  
+  {
+    path: "/listetest",
+    name: "skills Test List",
+    icon: "ni ni-trophy text-orange",
+    component:  listetest,
+    layout: "/admin",
+  },
+
+  {
+    path: "/allquestions",
+    name: "Skills Test Questions",
+    component: Questions,
+    layout: "/admin",
+  },
+  
+  {
+    path: "/add",
+    component: AddTest,
+    layout: "/admin",
+  },
+  {
+    path: "/ReclamationDetails",
+    component: ReclamationDetails, 
+    layout: "/admin",
+  },
+  
+  
   {
     path: "/personalityTestDetail",
     component: personalityTestDetail,
@@ -169,7 +211,33 @@ var routes = [
     path: "/updateJob",
     component: UpdateJob,
     layout: "/admin",
-  }
+  },
+
+
+  ///////quiz skills 
+  
+ 
+  {
+    path: "/send",
+   component: mail,
+    layout: "/admin",
+  },
+  {
+    path: "/addquestion",
+    component: AddQuestion,
+    layout: "/admin",
+  },
+  {
+    path: "/updatequestion",
+    component: UpdateQuestion,
+    layout: "/admin",
+  },
+
+  {
+    path: "/result/:testId" ,
+    component: Result,
+    layout: "/admin",
+  },
 
 ];
 export default routes;

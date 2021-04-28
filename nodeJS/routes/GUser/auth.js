@@ -49,7 +49,11 @@ async(req,res) => {
     //return jsonwebtoken
     const playload= {
         user: {
-            id: user.id
+            id: user.id,
+            email:user.email,
+            firstname:user.firstname,
+            password:user.password,
+            lastname:user.lastname
         }
     }
     jwt.sign(
@@ -58,7 +62,7 @@ async(req,res) => {
         { expiresIn: 360000},
         (err, token)=> {
             if (err) throw err;
-            res.json({token});
+            res.json({token,...playload});
         });
     
     }catch(err){

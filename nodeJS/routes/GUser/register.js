@@ -48,7 +48,7 @@ async(req,res) => {
 
     //save user
     await user.save();
-    
+    9
     //return jsonwebtoken
     const playload= {
         user: {

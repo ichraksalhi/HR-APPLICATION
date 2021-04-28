@@ -1,0 +1,123 @@
+.quiz-summary {
+
+    font-family: $quicksand;
+    margin-top:13rem;
+
+    .success-icon {
+        color: $green;
+        font-size:8rem;
+    }
+
+    h1 {
+        color: $green;
+        text-align: center;
+        font-size: $sm;
+        margin-top: 1rem;
+    }
+
+    .stats {
+        background-color:rgb(241, 237, 237);
+        max-width: 50%;
+        padding-top: $sm;
+        margin-top: 3rem;
+        padding-left: $md;
+        padding-right: $md;
+        padding-bottom: $md;
+    }
+
+    .stats h4, .stats h2 {
+        text-align: center;
+    }
+
+    .stats h4 {
+        color: lighten($off-black, 10%);
+    }
+*
+    .stats .stat {
+        color: black;
+        font-size: $normal;
+    }
+
+    section p {
+        text-align: center;
+        margin-top: $sm;
+        margin-bottom: $sm;
+    }
+
+    section p a:hover {
+        text-decoration: underline;
+    }
+
+    section ul {
+        margin-top: $sm;
+        text-align: center;
+    }
+
+    section ul li {
+        display: inline-block;
+        // padding: $xs;
+        color:black;
+    }
+
+    section ul li a {
+        padding: $sm !important;
+        color:black;
+    }
+    section ul li a:hover {
+        color: black !important;
+    }
+
+    section ul li:first-child {
+        border: 1px solid $blue;
+        margin-right: $sm;
+        transition: 0.3s linear all;
+    }
+
+    section ul li:first-child:hover {
+        background-color: $blue;
+    }
+
+    section ul li:last-child a {
+        color: black;
+    }
+
+    section ul li:last-child {
+        border: 1px solid green;
+    }
+
+    section ul li:last-child:hover {
+        background-color: $green;
+    }
+
+    .no-stats {
+        color: black;
+        margin: $xxlg auto;
+    }
+    .stat.left{
+color:black;
+    }
+    .right{
+        color:black;
+    }
+}
+
+.perfect-score {
+    color: $blue;
+}
+
+
+@media (max-width: $md-breakpoint) {
+    .quiz-summary h1 {
+        font-size: $sm;
+        padding-left: $xs;
+        padding-right: $xs;
+    }
+
+    div.container.stats {
+        margin: 0;
+        padding: $sm;
+        max-width: 100%;
+        width: 100%;
+    }
+    
+}

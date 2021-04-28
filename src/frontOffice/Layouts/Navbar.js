@@ -17,6 +17,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="ftco-nav">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item"><Link to="/" className="nav-link">Home</Link></li>
+              <li className="nav-item"><Link to="/Profile" className="nav-link">Profile</Link></li>
               <li className="nav-item "><Link to="/Reclamation" className="nav-link">Reclamation</Link></li>
               <li className="nav-item"><Link to="/Elearning" className="nav-link">E-Learning</Link></li>
               <li className="nav-item"><Link to="/BrowseJob" className="nav-link">Browse Jobs</Link></li>

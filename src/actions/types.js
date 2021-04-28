@@ -40,3 +40,8 @@ export const EDIT_CALENDAR = 'EDIT_CALENDAR';
 export const IS_MODIFIED_CALENDAR = 'IS_MODIFIED_CALENDAR'; 
 
 
+//quiz 
+export const LOAD_QUIZ = 'LOAD_QUIZ';
+export const SET_QUIZ_LOADING = 'SET_QUIZ_LOADING';
+export const END_FREE_QUIZ = 'END_FREE_QUIZ';
+export const CLEAR_QUIZ_STATS = 'CLEAR_QUIZ_STATS';

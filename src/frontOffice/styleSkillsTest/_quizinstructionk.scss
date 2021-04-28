@@ -1,0 +1,48 @@
+.instructions{
+    border: 1px solid darken(#f8f8f8,10%);
+    border-radius: 5px;
+    margin-top: 10rem;
+    margin-bottom:3rem;
+    padding: 2rem 3rem;
+    background-color: rgb(227, 225, 231);
+    color:black;
+    h1{
+        color:black;
+        font-size:x-large;
+        text-align:center;
+
+    }
+    .lifeline{
+        position:relative;
+        top:-3px;
+    }
+    .lifeline-icon{
+        color:#57b846;
+        cursor: pointer;
+    }
+    .browser-default{
+        padding-left:30px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        
+    .vertical-center {
+        min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+        min-height: 100vh; /* These two lines are counted as one :-)       */
+      
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+      }
+    
+    }
+    .left-btn { float: left;  
+        margin-top: 50px;
+        margin-right:40% ;
+        margin-left: 0%;
+    }
+    .right-btn { float: right; }
+
+   
+    
+}

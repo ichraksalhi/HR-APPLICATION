@@ -25,6 +25,8 @@ function auth(state = initialState, action){
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
             localStorage.setItem('token', payload.token); //put the token in the localStorage
+            localStorage.setItem('user', JSON.stringify(payload.user) );
+            console.log(payload);
             return {
                 ...state,
                 ...payload,
