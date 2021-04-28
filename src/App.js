@@ -47,10 +47,11 @@ import Navbar from "frontOffice/Layouts/Navbar";
 //import Sidebar from 'frontOffice/Layouts/Sidebar';                        <Sidebar/>
 //redux
 import { loadUser } from "./actions/auth";
-
+//chouchou
 import NewReclamation from "frontOffice/views/GReclamation/NewReclamation";
 //import Reclamations from 'frontOffice/views/Reclamations';
 import Reclamations from "frontOffice/views/GReclamation/Reclamations";
+import calendar from 'frontOffice/views/GCalendar/calendar';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -130,6 +131,7 @@ const App = () => {
                     path="/personalityTest/takeTest"
                     component={PersonalityTest}
                   ></Route>
+                   <Route  exact path="/calendar" component={calendar}></Route>
                   <Route
                     exact
                     path="/personalityTest/testResult"

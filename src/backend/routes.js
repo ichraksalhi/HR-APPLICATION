@@ -23,6 +23,8 @@ import UpdateJob from "backend/views/GJob/UpdateJob";
 import ListReclamations from "backend/views/GReclamation/ListReclamations.js"; 
 import ReclamationDetails from "backend/views/GReclamation/ReclamationDetails.js";
 import StatReclamation from "backend/views/GReclamation/StatReclamation.js";
+import calendar from "backend/views/GCalendar/calendar.js"; 
+
 
 //Personality test
 import personalityTestResults from "backend/views/GPersonalityTest/personalityTestResults";
@@ -93,6 +95,13 @@ var routes = [
     name: "StatReclamation",
     icon: "ni ni-planet text-blue",
     component: StatReclamation,
+    layout: "/admin",
+  },
+  {
+    path: "/calendar",
+    name: "calendar",
+    icon: "ni ni-planet text-blue",
+    component: calendar, 
     layout: "/admin",
   },
   {

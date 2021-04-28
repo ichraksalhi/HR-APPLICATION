@@ -21,12 +21,14 @@ app.use('/api/Job', require('./routes/GJob/Job'));
 app.use('/api/JobHR', require('./routes/GJob/HR'));
 app.use('/api/JobAdmin', require('./routes/GJob/Admin'));
 
-//GReclamation 
+//GReclamation  chouchou
 const reclamationRouter = require('./routes/GReclamation/reclamation');
 const userRouter = require('./routes/GUser/user');
+const calendarRouter = require('./routes/GCalendar/calendar');
 
 app.use('/reclamation', reclamationRouter);
 app.use( '/user' ,userRouter);
+app.use('/calendar', calendarRouter);
 
 //
 app.use('/personalityTest',require('./routes/GPersonalityTest/personality'));

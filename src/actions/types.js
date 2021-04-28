@@ -1,3 +1,7 @@
+
+//export const GET_ERRORS = 'GET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
 export const REGISTER_SUCCESS = 'REGISTER_SUCCESS';
 export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const SET_ALERT = 'SET_ALERT';
@@ -24,4 +28,15 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 export const JOB_ACTIVATED ='JOB_ACTIVATED';
 export const JOB_DEACTIVATED ='JOB_DEACTIVATED';
 export const JOB_DELETED ='JOB_DELETED';
+
+
+
+//chouchou
+// CALENDAR TYPES
+export const CALENDAR_LOADING = 'CALENDAR_LOADING';
+export const GET_CALENDAR = 'GET_CALENDAR';
+export const ADD_CALENDAR = 'ADD_CALENDAR';
+export const EDIT_CALENDAR = 'EDIT_CALENDAR';
+export const IS_MODIFIED_CALENDAR = 'IS_MODIFIED_CALENDAR'; 
+
 

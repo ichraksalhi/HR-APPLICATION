@@ -11,9 +11,6 @@
   "author": "sheDevIt",
   "license": "ISC",
   "dependencies": {
-    
-    "node-cron": "^3.0.0",
-    "node-crontab": "^0.0.8",
     "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "config": "^3.3.6",
@@ -24,6 +21,9 @@
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
+    "multer": "^1.4.2",
+    "node-cron": "^3.0.0",
+    "node-crontab": "^0.0.8",
     "react-js-pagination": "^3.0.3",
     "react-notifications": "^1.7.2",
     "react-whatsapp": "^0.2.1",

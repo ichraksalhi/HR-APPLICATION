@@ -1,4 +1,4 @@
-/*import './frontOffice/styles/styles.scss';
+import './frontOffice/styles/styles.scss';
  import React from 'react';
  import ReactDOM from 'react-dom';
  import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,8 +12,8 @@
      <App />
    </React.StrictMode>,
    document.getElementById('root')
- );*/
-
+ );
+/*
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
@@ -39,4 +39,4 @@ import AuthLayout from "backend/layouts/Auth.js";
    </BrowserRouter>
    </Provider>,                   
    document.getElementById("root")
- );
+ );*/
