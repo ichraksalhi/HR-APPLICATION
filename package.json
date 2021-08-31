@@ -23,6 +23,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@ant-design/icons": "^4.6.2",
     "@fortawesome/fontawesome-free": "5.15.2",
     "@iconify-icons/mdi": "^1.1.13",
     "@iconify/icons-mdi": "^1.1.14",
@@ -60,6 +61,7 @@
     "react": "17.0.1",
     "react-bootstrap": "^1.5.2",
     "react-chartjs-2": "2.11.1",
+    "react-chat-engine": "file:node_modules/react-chat-engine",
     "react-copy-to-clipboard": "5.0.3",
     "react-datetime": "3.0.4",
     "react-dom": "17.0.1",

@@ -14,6 +14,7 @@ import {
   Button,
   Row,
   Container,
+  
 } from 'reactstrap';
 
 import { connect } from 'react-redux';
@@ -110,35 +111,33 @@ class calendar extends Component {
 
   render() {
     return (
+<>
+      <div
+      className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+      style={{
+        minHeight: "400px",
+        backgroundImage:
+        "url(" +
+        require("../../assets/img/theme/rec.jpg").default +
+        ")",
+        backgroundSize: "cover",
+        backgroundPosition: "center top",
+      }}
+    >
+      {/* Mask */}
+      <span className="mask bg-gradient-default opacity-8" />
+      {/* Header container */}
+      <Container className="d-flex align-items-center" fluid>
 
-      
+      <div> </div>
+
        
-      <> 
+      </Container>
+      
+    </div>
 
-<div
-        className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
-        style={{
-          minHeight: "400px",
-          backgroundImage:
-          "url(" +
-          require("../../assets/img/theme/rec.jpg").default +
-          ")",
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
-        }}
-      >
-        {/* Mask */}
-        <span className="mask bg-gradient-default opacity-8" />
-        {/* Header container */}
-        <Container className="d-flex align-items-center" fluid>
 
-        <div> </div>
 
-          
-        </Container>
-        
-      </div>
- 
       <div className="animated fadeIn">
         <Row>
           <Col xs="12" xl="12">
@@ -150,7 +149,7 @@ class calendar extends Component {
                
                 <FormGroup row>
                   <Col md="3">
-                    <Label htmlFor="text-input">CALENDRIER POUR EMPLOYER</Label>
+                    <Label htmlFor="text-input">update calendar for HR</Label>
                   </Col>
                   <Col xs="12" md="9">
                     <Input type="file" name="fileOne" onChange={this.fileSelectedHandler} />
@@ -162,7 +161,7 @@ class calendar extends Component {
 
                 <FormGroup row>
                   <Col md="3">
-                    <Label htmlFor="text-input">cALENDRIER DES HR</Label>
+                    <Label htmlFor="text-input">update calendar for Candidate</Label>
                   </Col>
                   <Col xs="12" md="9">
                     <Input type="file" name="fileTwo" onChange={this.fileTwoSelectedHandler} />
@@ -174,12 +173,15 @@ class calendar extends Component {
                 
                 <CardFooter>
                   <center>
-                    <Button type="submit" block onClick={this.handleSubmit} color="primary">
+                    <Button  color="danger" type="submit" block onClick={this.handleSubmit} color="primary">
                       <i className="fa fa-dot-circle-o"></i> Modifier
                     </Button>
-                    <Button type="reset" block onClick={this.handleCancel} color="danger">
+                    <Button type="reset" block onClick={this.handleCancel} color="info">
                       <i className="fa fa-ban"></i> Annuler
                     </Button>
+
+
+                
                   </center>
                 </CardFooter>
               </CardBody>
@@ -187,7 +189,7 @@ class calendar extends Component {
           </Col>
         </Row>
       </div>
-      </>  );
+   </> );
   }
 }
 

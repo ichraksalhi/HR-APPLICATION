@@ -45,9 +45,9 @@ const User = require('../../models/User');
   });
 
   router.route('/update',auth).put((req, res) => {
-    const {Us,firstname,lastname,email} = req.body;
+    const {Us,firstname,lastname,email,company} = req.body;
     console.log(Us);
-    User.findOneAndUpdate({ Us: req.body.Us },{ firstname,lastname,email },(err, result) => {
+    User.findOneAndUpdate({ Us: req.body.Us },{ firstname,lastname,email,company },(err, result) => {
       console.log(Us);  
       console.log(firstname);
       console.log(lastname);

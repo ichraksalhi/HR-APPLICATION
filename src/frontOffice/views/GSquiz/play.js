@@ -421,12 +421,12 @@ import isEmpty from '../../validation/is-empty';
                       
                   
                       <div className="option-container">
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt1}</p>
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt2}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionA}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionB}</p>
                         </div>
                         <div className="option-container">
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt3}</p>
-                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.opt4}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionC}</p>
+                            <p onClick={this.handleOptionClick} className="option">{currentQuestion.optionD}</p>
                         </div>
                     </div>
 

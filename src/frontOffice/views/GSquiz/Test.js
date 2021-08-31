@@ -2,7 +2,8 @@ import React, { useEffect ,useState} from "react";
 import Timer from "./Timer";
 import SingleQuestion from "./SingleQuestion";
 import axios from "axios";
-
+import Header from '../../Layouts/Header';
+import "./componentsStyles/Test.css";
 const jwt = require('jsonwebtoken');
 function Test({ history }) {
 
@@ -99,8 +100,10 @@ function Test({ history }) {
   }
 
   return (
-    <div className="Test">
-      <Timer calcResult={calcResult} count={questions.length} />
+    <>
+    <Header/>
+    <div className="questions">
+      <Timer  calcResult={calcResult} count={questions.length} />
       <form className="Real-Test" onSubmit={submitHandler}>
         {questions.map((question, index) => {
           return (
@@ -111,9 +114,10 @@ function Test({ history }) {
             />
           );
         })}
-        <button type="submit">Submit the test!</button>
+        <button  style={{marginTop:'2rem'}}type="submit">Submit the test!</button>
       </form>
     </div>
+    </>
   );
 }
 

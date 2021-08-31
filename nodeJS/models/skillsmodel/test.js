@@ -20,6 +20,11 @@ const TestSchema = new Schema({
     required: true,
     default: 575757,
   },
+  archived: { 
+    type: Boolean,
+    default: false, 
+    //required: false  
+  }
 });
 
 // Model

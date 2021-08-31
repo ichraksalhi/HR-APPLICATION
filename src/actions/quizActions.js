@@ -2,7 +2,7 @@ import axios from 'axios';
 import { LOAD_QUIZ, GET_ERRORS, SET_QUIZ_LOADING, END_FREE_QUIZ, CLEAR_QUIZ_STATS } from './types';
 
 export const fetchQuiz = () => dispatch => {
-    axios.post('http://localhost:5000/api/question/')
+    axios.get('http://localhost:5000/api/quiz/all')
         .then(res => dispatch({
             type: LOAD_QUIZ,
             payload: res.data
@@ -16,8 +16,9 @@ export const fetchQuiz = () => dispatch => {
 export const getFreeQuestions = () => (dispatch) => {
    
     dispatch(setQuizLoading());
-    axios.post('http://localhost:5000/api/question/')
+    axios.get("http://localhost:5000/api/quiz/getFreeQuiz")
         .then(res => dispatch({
+           
                 type: LOAD_QUIZ,
                 payload: res.data,
                

@@ -5,9 +5,9 @@ function SingleQuestion({ question, index }) {
 
   return (
     <div className="Single-Question">
-      <h2>{index}: {question.question}</h2>
-      <div className="radio">
-        <label>
+      <h5>{index}: {question.question}</h5>
+      <div className="options-container">
+        <label className="radio">
           <input
             type="radio"
             name={`ans${index}`}

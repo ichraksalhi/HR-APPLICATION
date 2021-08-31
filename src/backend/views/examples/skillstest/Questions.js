@@ -3,12 +3,16 @@ import axios from "axios";
 import Question from "./Question";
 import Popup from "../../../components/popup/popupq";
 import { Grid, } from '@material-ui/core';
+import AddIcon from '@material-ui/icons/Add';
+import Pagination from './pagination';
 import {
   Button,
  CardHeader,
   Row,
   Col,
-  Container
+  Container,
+  Card,
+  Table
 } from "reactstrap";
 
 function Questions({ /*token,*/ history }) {
@@ -18,6 +22,8 @@ function Questions({ /*token,*/ history }) {
   const [opt3, setOpt3] = useState("");
   const [opt4, setOpt4] = useState("");
   const [answer, setAnswer] = useState("");
+
+
   const handleClose = () => setOpenPopupq(false);
   const reload=()=>window.location.reload(false);
   const submitHandler = (e) => {
@@ -48,10 +54,17 @@ function Questions({ /*token,*/ history }) {
       });
   };
 
-  console.log("questions");
+
   const [questions, setQuestions] = useState([]);
   const [openPopupq,setOpenPopupq]=useState(false);
 
+  const[currentPage,setCurrentPage]=useState(1);
+const[questionPerPage,setQuestionPerPage]=useState(3);
+  
+//GET CURRENT QUESTIONS
+const indexOfLastQuestion= currentPage*questionPerPage;
+const indexcOfFirstQuestion=indexOfLastQuestion-questionPerPage;
+const currentQuestions=questions.slice(indexcOfFirstQuestion,indexOfLastQuestion);
 
 
   useEffect(() => {
@@ -71,6 +84,10 @@ function Questions({ /*token,*/ history }) {
   const handleChange2 = () => {
     history.push("/admin");
   };
+//change page
+const paginate=pageNumber=>setCurrentPage(pageNumber);
+
+
   return (
     <>
      <div
@@ -92,40 +109,67 @@ function Questions({ /*token,*/ history }) {
       <Row></Row>
     </Container>
   </div>
-  
-  <Container className="mt--7" fluid style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+        <Container className="mt--7" fluid>
         <Row className="mt-5">
-      <Col className="mb-5 mb-xl-0" xl="8">
-      <CardHeader className=" border-0">
-    <Row className="align-items-center">
-      <Col xs="8">
-        <h3 className="mb-0"></h3>
-      </Col>
-      <Col className="text-right" xs="4">
-        <Button 
-          color="default"
-          //onClick={handleChange}
-          onClick={()=>setOpenPopupq(true)}
-          size="sm">
-         ADD
-        </Button>
-      </Col>
-    </Row>
-  </CardHeader>
-     
-      {questions.map((question, index) => {
-        return (
-          <Question
-            key={index + 1}
-            index={index + 1}
-            /*token={token}*/
-            question={question}
-            history={history}
-          />
-        );
-      })}
-    </Col>
-    </Row>
+          <Col className="mb-5 mb-xl-0" xl="8">
+            <Card className="shadow">
+            <CardHeader className="border-0">
+                <Row className="align-items-center">
+                  <div className="col">
+                    <h3 className="mb-0">List Question Test </h3>
+                  </div>    
+ 
+                     {/* search bar */}
+                     <div className="col text-right">
+                      <Button 
+
+                      size="sm" onClick={()=>setOpenPopupq(true)}> <AddIcon fontSize="small"/>ADD</Button> 
+                  </div>
+                  {/* search bar */}
+                 
+                </Row>
+              </CardHeader>
+
+        
+              <Table className="align-items-center table-flush" responsive>
+                <thead className="thead-light">
+                  <tr>
+                    <th scope="col">Question N°</th>
+                    
+                    <th scope="col">Question</th>
+                   
+                    <th scope="col">option1</th>
+                    <th scope="col">option2</th>
+                    <th scope="col">option3</th>
+                    <th scope="col">option4</th>
+                    <th scope="col">answer</th>
+
+                  </tr>
+                </thead>
+                <tbody>
+                 {/* <h1>{tests.length}</h1> */}
+                      {currentQuestions.map((question, index) => {
+              return (
+                <Question
+                  key={index + 1}
+                  index={index + 1}
+                  //token={token}
+                  question={question}
+                  history={history}
+                />
+              );
+            })
+              
+              } 
+             
+            </tbody>
+            
+              </Table>
+              <Pagination questionPerPage={questionPerPage} totalQuestion={questions.length} paginate={paginate}/>
+            </Card>
+          </Col>
+            
+          </Row>
           </Container>
     <Popup openPopupq={openPopupq}
           setOpenPopupq={setOpenPopupq}>

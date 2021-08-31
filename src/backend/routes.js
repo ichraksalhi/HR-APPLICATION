@@ -43,8 +43,13 @@ import UpdateQuestion from "backend/views/examples/skillstest/UpdateQuestion";
 import Result from "backend/views/examples/skillstest/Result";
 import mail from "backend/views/examples/skillstest/mail";
 import Profile from "backend/views/examples/Profile";
+import listetestarchived from "backend/views/examples/skillstest/listtestarchived";
+import UpdateProfile from "backend/views/examples/skillstest/updateProfile";
+//  recommandation++++scraping
+import Recommandation from "backend/views/GRecommandation/recommandationdetails";
+import scrap from "backend/views/GScraping/scraping";
 
-
+import chat from "backend/views/Gchat/chat.js";
 
 
 
@@ -97,13 +102,21 @@ var routes = [
     component: Ranking,
     layout: "/admin",
   },
-  {
-    path: "/scrapping",
-    name: "scrapping",
-    icon: "ni ni-planet text-blue",
-    component: scraping,
+  // {
+  //   path: "/scrapping",
+  //   name: "scrapping",
+  //   icon: "ni ni-planet text-blue",
+  //   component: scraping,
+  //   layout: "/admin",
+  // }, 
+   {
+    path: "/scrap",
+    name: "scrap",
+    icon: "ni ni-tv-2 text-primary",
+    component: scrap,
     layout: "/admin",
   },
+
   {
     path: "/ListReclamations",
     name: "ListReclamations",
@@ -123,6 +136,13 @@ var routes = [
     name: "calendar",
     icon: "ni ni-planet text-blue",
     component: calendar, 
+    layout: "/admin",
+  },
+  {
+    path: "/chat",
+    name: "chat",
+    icon: "ni ni-planet text-blue",
+    component: chat, 
     layout: "/admin",
   },
   {
@@ -150,6 +170,17 @@ var routes = [
     path: "/allquestions",
     name: "Skills Test Questions",
     component: Questions,
+    layout: "/admin",
+  },
+  {
+    path: "/listetestarchived",
+    name: "skills Test archived List",
+    component:  listetestarchived,
+    layout: "/admin",
+  },
+  {
+    path: "/recommandation" ,
+    component: Recommandation,
     layout: "/admin",
   },
   
@@ -232,7 +263,11 @@ var routes = [
     component: UpdateQuestion,
     layout: "/admin",
   },
-
+  {
+    path: "/update-profile",
+    component: UpdateProfile,
+    layout: "/admin",
+  },
   {
     path: "/result/:testId" ,
     component: Result,

@@ -39,7 +39,7 @@ import {
 } from "reactstrap";
 
 
-function SingleTest({ test, history, index, /*token*/ url}) { 
+function SingleTest2({ test, history, index, /*token*/ url}) { 
   const date = test.validity;
   //console.log(test);
   //  const [notify,setNotify]=useState({isOpen:false,message:'',type:''}) 
@@ -71,17 +71,17 @@ function SingleTest({ test, history, index, /*token*/ url}) {
   
 const handleClick2 =()=>{
   
-   axios.put(`http://localhost:5000/api/test/archive/${test._id}`)
-   .then((response) => {
-     //console.log(response.data);
-     alert("Successfully archived Test");
-     window.location.reload(true);
-   })
-   .catch((err) => {
-   alert(err);
-  console.log(err);
-   });
 
+    axios.put(`http://localhost:5000/api/test/unarchive/${test._id}`)
+    .then((response) => {
+      console.log(response.data);
+      alert("Successfully unarchived Test");
+      window.location.reload(true);
+    })
+    .catch((err) => {
+    alert(err);
+   console.log(err);
+    });
 };
   return (
     <>
@@ -118,7 +118,7 @@ const handleClick2 =()=>{
                            // href="#pablo"
                             onClick={handleClick2}
                           >
-                           archivate
+                           unarchivate
                           </DropdownItem>
                           <DropdownItem
                            
@@ -142,6 +142,6 @@ const handleClick2 =()=>{
   );
 };
 
-export default SingleTest;
+export default SingleTest2;
 
 

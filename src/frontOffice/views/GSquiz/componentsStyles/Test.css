@@ -1,0 +1,37 @@
+.Test {
+    padding: 1rem;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(90, 231, 219, 0.062);
+  }
+  .Timer {
+    display: flex;
+    margin-bottom: 0.3rem;
+    justify-content: center;
+    align-content: center;
+    color: rgb(220 32 145);
+  }
+  .Real-Test button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+    border-radius: 0.6rem;
+    outline: none;
+    background-color: #5869d0;
+  }
+  
+  .Single-Question {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  .Single-Question > div {
+    margin-top: 0.2rem;
+  }
+  .Single-Question div label {
+    color: #5a6ad0;
+    font-size: 1.2rem;
+  }
+  .Single-Question div label input {
+    margin-right: 0.5rem;
+  }
+  

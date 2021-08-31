@@ -38,6 +38,7 @@ app.use("/api/question", require("./routes/skillsroute/question"));
 app.use("/api/test", require("./routes/skillsroute/test"));
 app.use("/api/result", require("./routes/skillsroute/result"));
 app.use("/api/profile", require("./routes/GUser/profile"));
+app.use("/api/quiz",require("./routes/skillsroute/demoquiz"));
 
 ////for the mail api najla 
 const nodemailer = require('nodemailer')

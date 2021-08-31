@@ -30,6 +30,8 @@ import play from './frontOffice/views/GSquiz/play';
 import profile from './frontOffice/views/Profile';
 import QuizSummary from './frontOffice/views/GSquiz/QuizSummary';
 import Test from './frontOffice/views/GSquiz/Test';
+import demoInstructions from './frontOffice/views/GSquiz/demoinstruction';
+import updateprofile from './frontOffice/views/UpdateProfile';
 
 /////////////////////////
 
@@ -55,6 +57,7 @@ import NewReclamation from "frontOffice/views/GReclamation/NewReclamation";
 //import Reclamations from 'frontOffice/views/Reclamations';
 import Reclamations from "frontOffice/views/GReclamation/Reclamations";
 import calendar from 'frontOffice/views/GCalendar/calendar';
+import chat from 'frontOffice/views/Gchat/chat';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -113,17 +116,20 @@ const App = () => {
                     path="/Reclamations"
                     component={Reclamations}
                   ></Route>
+                    <Route  exact path="/chat" component={chat}></Route>
                   {/* Quiz */}
                 
                   <Route  exact  path="/quizSummary" component={QuizSummary}></Route>
-                 <Route  exact  path="/play/instructions" component={QuizInstructions}></Route>
-                 <Route  exact  path="/play/quiz" component={play}></Route>
-                    <Route exact path="/Profile" component={profile}></Route>
+                            <Route  exact  path="/play/instructions" component={QuizInstructions}></Route>
+                            <Route  exact  path="/demo/quiz" component={play}></Route>
+                            <Route  exact  path="/demo/instructions" component={demoInstructions}></Route>
+                            <Route exact path="/Profile" component={profile}></Route>
+                            <Route exact path="/update-profile" component={updateprofile}></Route>
+                          
+
                             {localStorage.getItem("takeTest") === "true" &&
                                localStorage.getItem("times") === "1" && (
-                                <Route exact path="/take-test" component={Test} /> )}
-
-
+                                 <Route exact path="/take-test" component={Test} /> )}
 
 
 

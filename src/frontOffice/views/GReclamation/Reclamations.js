@@ -5,6 +5,7 @@ import axios from 'axios';
 import '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "reactstrap";
 import Pagination from './pagination.js';
+//import PDF from './PDF';
 
 // reactstrap components
 import {
@@ -49,10 +50,28 @@ const Reclamation = props => (
   
    
     <td>
-       <a href="#" onClick={() => { props.deleteReclamation(props.reclamation._id) }}>delete</a>
-     
-</td>
-
+  
+         <Button color="info" type="button"   
+          size={'sm'}
+         onClick={() => { props.deleteReclamation(props.reclamation._id) }} >
+          Delete
+        </Button>
+  </td>
+ 
+<td>
+         <Button
+                  className={'float-right'}
+                  color={!props.reclamation.archived ? 'success' : 'danger'}
+                  size={'sm'}
+                  onClick={() => props.handleChange(props.reclamation._id , props.reclamation._id)}
+                
+  
+                >
+                  {!props.reclamation.archived ? 'Archive' : 'Unarchive'}
+                </Button>
+  
+  
+      </td>
   </tr>
 )
 
@@ -70,8 +89,9 @@ export default class Reclamations extends Component {
     super(props);
 
     this.deleteReclamation = this.deleteReclamation.bind(this)
-    
-    //this.handleChange = this.handleChange.bind(this)
+    this.unarchiveReclamation = this.unarchiveReclamation.bind(this)
+    this.archiveReclamation = this.archiveReclamation.bind(this)
+    this.handleChange = this.handleChange.bind(this)
 
 
     this.state = {reclamations: [],
@@ -105,15 +125,35 @@ export default class Reclamations extends Component {
     })
   }
 
- 
+  unarchiveReclamation(id) {
+    axios.put('http://localhost:5000/Reclamation/unarchive/'+id)
+      .then(response => { console.log(response.data)});
 
+    this.setState({
+      reclamations: this.state.reclamations.filter(el => el._id !== id)
+    })
+  }
 
+  archiveReclamation(id) {
+    axios.put('http://localhost:5000/Reclamation/archive/'+id)
+      .then(response => { console.log(response.data)});
+
+    this.setState({
+      reclamations: this.state.reclamations.filter(el => el._id !== id)
+    })
+  }
+
+  handleChange = (archived, id) => {
+    if (archived) this.unarchiveReclamation(id);
+ this.archiveReclamation(id);
+  };
 
   reclamationList() {
     return this.state.reclamations.map(currentreclamation => {
       return <Reclamation reclamation={currentreclamation}
        handleChange={this.handleChange}
-       
+        unarchiveReclamation={this.unarchiveReclamation}
+        archiveReclamation={this.archiveReclamation}
        deleteReclamation={this.deleteReclamation} key={currentreclamation._id}/>;
     })
   }
@@ -172,22 +212,22 @@ export default class Reclamations extends Component {
               >
           <thead className="thead">
             <tr>
-              <th scope="col">lastname</th>
+              <th scope="col">name</th>
               <th scope="col">object</th>
               <th scope="col">Description</th>
               <th scope="col">comment</th>
               <th scope="col">type</th>
               <th scope="col">etat</th>
               <th scope="col">delete</th>
-              <th scope="col">Actions</th>
+              <th scope="col">archiver</th>
+            
               <th scope="col" />
             </tr>
           </thead>
           <tbody>
             { this.reclamationList() }
        
-           
-
+          
   
       
           </tbody>
@@ -204,8 +244,7 @@ export default class Reclamations extends Component {
         </Row>
 
         
-
-         
+     
      
       </div>
     </section>

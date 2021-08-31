@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { Icon, InlineIcon } from '@iconify/react';
+import clockOutline from '@iconify-icons/mdi/clock-outline';
 
 function Timer({ count, calcResult }) {
   const [time, setTime] = useState(count*60);
@@ -24,7 +26,12 @@ function Timer({ count, calcResult }) {
     return formattedTime;
   }
 
-  return <div className="Timer">Time Left- {formatTime(time)}</div>;
+  return <div className="Timer"/* >Time Left- </div>*/>
+  <span className="mdi mdi-clock-outline mdi-24px" style={{ position: 'relative', top: '2px' }}>
+                                    <Icon className="lifeline"  icon={clockOutline} /></span>
+                                    {formatTime(time)}
+                           
+                            </div>
 }
 
 export default Timer;

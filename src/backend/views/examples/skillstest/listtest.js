@@ -5,17 +5,22 @@ import SingleTest from "./singletest";
 import Popup from "../../../components/popup/popup";
 //import Form from 'muicss/lib/react/form';
 import AddIcon from '@material-ui/icons/Add';
-
+//import Search from "./search";
 import {
   Button,
   Card,
   CardHeader,
+  Form,
   CardBody,
   NavItem,
   NavLink,
   Nav,
   Progress,
-  Form,
+  FormGroup, 
+InputGroup, 
+ InputGroupAddon, 
+ InputGroupText,
+  Input,
   Table,
   Container,
   Row,
@@ -35,30 +40,52 @@ function CreateTest({ /*token,*/ history, match: { url } }) {
  
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/test/getAlltests",/* { token }*/)
-      .then((response) => {
-       // console.log(response);
-        setTests(response.data);
-        //console.log(response.data);
+  axios.get("http://localhost:5000/api/test/nonarchive")
+  .then((response) => {
+    setTests(response.data);
+    const a=JSON.parse(JSON.stringify(response.data.map((test, index) => {
+             const b =test.numberOfQuestions;
+            setNumberOfQuestions(test.numberOfQuestions);
+          })))
+          }) .catch((err) => {
+                  console.log(err);
+                  alert(err.response.msg);
+                  // history.push("/");
+                });
+
+               
+
+    // axios.get("http://localhost:5000/api/test/getAlltests",/* { token }*/)
+    //   .then((response) => {
+    //    // console.log(response);
+    //     setTests(response.data);
+    //     //console.log(response.data);
         
-        //const a = JSON.parse(response.data);
-         const a=JSON.parse(JSON.stringify(response.data.map((test, index) => {
-         const b =test.numberOfQuestions;
-         setNumberOfQuestions(test.numberOfQuestions);
-        })))
+    //     //const a = JSON.parse(response.data);
+    //      const a=JSON.parse(JSON.stringify(response.data.map((test, index) => {
+    //      const b =test.numberOfQuestions;
+    //      setNumberOfQuestions(test.numberOfQuestions);
+    //     })))
 
-      })
-      .catch((err) => {
-        console.log(err);
-        alert(err.response.msg);
-       // history.push("/");
-      });
-  }, [/*token*/, history]);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //     alert(err.response.msg);
+    //    // history.push("/");
+    //   });
+   }, [/*token*/, history]);
 
 
 
+        
+
+  
+
+
+//const {search,setSearch}=useState(1)
 const handleClose = () => setOpenPopup(false);
 const reload=()=>window.location.reload(false);
+
   const submitHandler = (e) => {
     e.preventDefault();
     axios.post("http://localhost:5000/api/test/create", {
@@ -115,9 +142,25 @@ const reload=()=>window.location.reload(false);
 
 
               <Container className="mt--7" fluid>
-        <Row className="mt-5">
+              {/* <Form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
+            <FormGroup className="mb-0">
+              <InputGroup className="input-group-alternative">
+                <InputGroupAddon addonType="prepend">
+                  <InputGroupText>
+                    <i className="fas fa-search" />
+                  </InputGroupText>
+                </InputGroupAddon>
+                <Search onSearch={(value)=>{
+                  setSearch(value);
+                }}/>
+              </InputGroup>
+            </FormGroup>
+          </Form> */}
+      
+        <Row className="mt-3">
           <Col className="mb-5 mb-xl-0" xl="8">
             <Card className="shadow">
+           
             <CardHeader className="border-0">
                 <Row className="align-items-center">
                   <div className="col">

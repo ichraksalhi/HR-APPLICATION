@@ -8,6 +8,7 @@ import {
   Form,
   Input,
   Row,
+  Container,
   Col,
 } from "reactstrap";
 
@@ -48,12 +49,42 @@ function UpdateQuestion({ history,index,/* token*/ match: { params } }) {
         setAnswer("");
       });
   };
+  const handleClickQuit = () => {
+    history.push("/admin/allquestions");
+//    // history.push(`/admin/updatequestion/${JSON.stringify(question._id)}`);
+
+};
+
 
   return (
     // <div className="Question">
+<>
+<div className="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+        style={{
+          minHeight: "400px",
+          // backgroundImage:
+          // "url(" +
+          // require("../../assets/img/theme/rec.jpg").default +
+          // ")",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+        }}
+      >
+        {/* Mask */}
+        <span className="mask bg-gradient-default opacity-8" />
+        {/* Header container */}
+        <Container className="d-flex align-items-center" fluid>
 
-    <Card className="bg-secondary shadow">
-      <Col className="order-xl-1" xl="8" style={{margin:'5rem'}}>
+        <div> </div>
+
+         
+        </Container>
+        
+      </div>
+      <Container className="mt--7" fluid>
+        <Row className="mt-5">
+          <Col className="mb-5 mb-xl-0" xl="8">
+            <Card className="shadow">
   <CardBody>
   <Form className="Question-Form" onSubmit={submitHandler}>
       <div className="pl-lg-4">
@@ -146,14 +177,20 @@ function UpdateQuestion({ history,index,/* token*/ match: { params } }) {
           </Col>
       
         <Button type="submit" style={{float:'right',marginTop:'2rem'}}>Update the question</Button>
+        
+        <Button type="submit" onClick={handleClickQuit} style={{float:'left',marginTop:'2rem'}}>Quit </Button>
        
       </Row>
       </div>
       </Form>
       </CardBody>
-      </Col>
-</Card>
-
+      </Card>
+          </Col>
+            
+          </Row>
+          </Container>
+          
+</>
   );
 }
 
